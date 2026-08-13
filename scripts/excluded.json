@@ -1,0 +1,4 @@
+{
+  "comment": "Media ids that must never reach public/ or a download archive. Mirrored in content/excluded.ts.",
+  "ids": ["IMG_2841"]
+}

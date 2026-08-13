@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw trip media (originals, HEIC/MOV, ~19GB) - never commit
+/Новая папка/
+
+# converted media (~2GB) - regenerate with the scripts, do not put it in git
+/public/media/
+/scripts/media-index.json
+/scripts/photo-times.json

@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Балхаш, август 2026
 
-## Getting Started
+Сайт-архив поездки: смонтированный фильм двумя частями, фотографии сериями и
+исходные видеоклипы. Всё можно смотреть и скачивать.
 
-First, run the development server:
+## Запуск
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Медиа
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Оригиналы лежат в `Новая папка/` и в git не попадают. Готовые файлы собираются
+скриптами в `public/media/` (около 2 ГБ, тоже не в git).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Что | Откуда | Куда |
+| --- | --- | --- |
+| Фото первой части, озеро | `Новая папка/Новая папка/` | `public/media/photos/` |
+| Фото второй части, Астана | `Новая папка/photos/` | `public/media/photos/` |
+| Кадры без даты | `Новая папка/extra/` | `public/media/photos/` |
+| Фильм, две части | `Новая папка/фильмы/` | `public/media/films/` |
 
-## Learn More
+У файлов из `extra/` вырезан EXIF (пересланы через мессенджер), дата в имени
+файла - это дата пересылки. Поэтому часть поездки для них задана вручную в
+`scripts/extra-classification.json`, а на сайте они лежат отдельными группами с
+подписью «дата неизвестна». Добавили новый файл в `extra/` - допишите строчку в
+этот json, иначе он будет пропущен.
 
-To learn more about Next.js, take a look at the following resources:
+Пересобрать после правки состава папок:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+python3 scripts/convert-photos.py
+node scripts/build-manifest.mjs
+node scripts/build-zips.mjs
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Скрипты пропускают уже сконвертированные файлы, так что повторный запуск дешёвый.
+`--force` у `convert-photos.py` перегоняет фото заново. Удалённые из исходной
+папки кадры автоматически удаляются и из `public/media/photos/`.
 
-## Deploy on Vercel
+Фильмы перегоняются отдельно и долго, только если менялись исходники:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+./scripts/convert-films.sh
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Исходные 71 видеоклип на сайт не идут: то же самое вошло в фильм, а весили они
+больше половины всего архива. Скрипт `scripts/convert-media.sh` для них остался,
+и в `scripts/build-manifest.mjs` есть флаг `INCLUDE_RAW_CLIPS`, если понадобятся.
+
+HEIC и MOV не открываются в браузере, поэтому фото переводятся в JPEG (поворот
+запекается в пиксели, иначе `next/image` считает вертикальный кадр
+горизонтальным), а видео в MP4 H.264.
+
+## Что где правится
+
+- `content/series-titles.ts` - названия серий. Без записи серия подписывается
+  временем суток из EXIF, чтобы подпись не выдумывала содержимое кадра.
+- `content/story.ts` - хроника по дням и вводные абзацы.
+- `content/films.ts` - фильмы.
+- `content/site.ts` - заголовок, описание, пункты меню.
+- `content/excluded.ts` и `scripts/excluded.json` - файлы, которые не должны
+  попадать на сайт и в архивы. Сейчас там `IMG_2841`: снимок квитанции с ФИО,
+  адресом и номером документа.
+
+`content/media.generated.ts` собирается скриптом, руками его не правят.

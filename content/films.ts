@@ -1,0 +1,34 @@
+export type Film = {
+  id: string;
+  title: string;
+  note: string;
+  src: string;
+  poster: string;
+  /** Seconds, from ffprobe on the source. */
+  duration: number;
+  downloadName: string;
+};
+
+export const films: Film[] = [
+  {
+    id: "tuda",
+    title: "Туда",
+    note: "Дорога на озеро и четыре дня на берегу.",
+    src: "/media/films/tuda.mp4",
+    poster: "/media/films/tuda.jpg",
+    duration: 1057,
+    downloadName: "balkhash-film-1-tuda.mp4",
+  },
+  {
+    id: "obratno",
+    title: "Обратно",
+    note: "Дождь на трассе, Караганда, Астана.",
+    src: "/media/films/obratno.mp4",
+    poster: "/media/films/obratno.jpg",
+    duration: 775,
+    downloadName: "balkhash-film-2-obratno.mp4",
+  },
+];
+
+export const filmsNote =
+  "Смонтированный фильм о поездке, двумя частями. Вместе получается чуть больше получаса.";
