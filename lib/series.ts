@@ -39,4 +39,15 @@ export function videoLabel(clip: VideoClip) {
   };
 }
 
-export const seriesZip = (group: Series) => `/media/zip/${group.id}.zip`;
+/**
+ * Архивы лежат в GitHub Releases рядом с фильмами: в репозитории держим только
+ * то, что страница показывает. Перезалить после build-zips.mjs:
+ *   gh release upload films-v1 public/media/zip/*.zip --clobber
+ */
+export const RELEASE_FILES =
+  "https://github.com/JustBelieve9/balhash/releases/download/films-v1";
+
+export const seriesZip = (group: Series) =>
+  `${RELEASE_FILES}/${group.id}.zip`;
+
+export const allPhotosZip = `${RELEASE_FILES}/all-photos.zip`;

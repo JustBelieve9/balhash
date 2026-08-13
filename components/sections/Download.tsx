@@ -1,6 +1,7 @@
 import { downloadNote, placeNote } from "@/content/story";
 import { films } from "@/content/films";
 import { DownloadLink } from "@/components/gallery/DownloadLink";
+import { allPhotosZip } from "@/lib/series";
 import { formatFrames } from "@/lib/format";
 
 export function Download({ photoCount }: { photoCount: number }) {
@@ -19,7 +20,7 @@ export function Download({ photoCount }: { photoCount: number }) {
         </p>
       </div>
       <div className="mt-8 flex flex-col items-start gap-2">
-        <DownloadLink href="/media/zip/all-photos.zip">
+        <DownloadLink href={allPhotosZip}>
           Скачать все фото одним архивом
         </DownloadLink>
         {films.map((film) => (

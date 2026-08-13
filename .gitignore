@@ -43,7 +43,14 @@ next-env.d.ts
 # raw trip media (originals, HEIC/MOV, ~19GB) - never commit
 /Новая папка/
 
-# converted media (~2GB) - regenerate with the scripts, do not put it in git
-/public/media/
+# Правило простое: то, что страница показывает, лежит в репозитории; то, что
+# только скачивается или слишком велико для git, лежит в GitHub Releases.
+#
+#   в репозитории:  photos/ (102 МБ, каждый файл до 1 МБ), постеры фильмов
+#   в релизе:       films/*.mp4 (212 и 144 МБ), zip/*.zip (архивы, до 100 МиБ)
+#
+# Всё это пересобирается скриптами, см. README.
+/public/media/films/*.mp4
+/public/media/zip/
 /scripts/media-index.json
 /scripts/photo-times.json
