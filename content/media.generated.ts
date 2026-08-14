@@ -6,7 +6,10 @@ export type Part = "lake" | "astana";
 
 export type Frame = {
   id: string;
+  /** Полный кадр: оверлей и скачивание. */
   src: string;
+  /** 1200 px: обложки в сетке. Полный кадр туда слишком тяжёл. */
+  thumb: string;
   width: number;
   height: number;
   takenAt: string | null;
@@ -60,6 +63,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2493",
         "src": "/media/photos/IMG_2493.jpg",
+        "thumb": "/media/thumbs/IMG_2493.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-04T13:40:44",
@@ -68,6 +72,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2494",
         "src": "/media/photos/IMG_2494.jpg",
+        "thumb": "/media/thumbs/IMG_2494.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-04T13:40:46",
@@ -76,6 +81,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2495",
         "src": "/media/photos/IMG_2495.jpg",
+        "thumb": "/media/thumbs/IMG_2495.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-04T13:40:46",
@@ -98,6 +104,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2500",
         "src": "/media/photos/IMG_2500.jpg",
+        "thumb": "/media/thumbs/IMG_2500.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-04T17:28:15",
@@ -106,6 +113,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2501",
         "src": "/media/photos/IMG_2501.jpg",
+        "thumb": "/media/thumbs/IMG_2501.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-04T17:28:16",
@@ -114,6 +122,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2502",
         "src": "/media/photos/IMG_2502.jpg",
+        "thumb": "/media/thumbs/IMG_2502.jpg",
         "width": 2560,
         "height": 1920,
         "takenAt": "2026-08-04T17:28:24",
@@ -122,6 +131,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2503",
         "src": "/media/photos/IMG_2503.jpg",
+        "thumb": "/media/thumbs/IMG_2503.jpg",
         "width": 2560,
         "height": 1920,
         "takenAt": "2026-08-04T17:28:27",
@@ -144,6 +154,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2509",
         "src": "/media/photos/IMG_2509.jpg",
+        "thumb": "/media/thumbs/IMG_2509.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-05T16:28:19",
@@ -152,6 +163,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2510",
         "src": "/media/photos/IMG_2510.jpg",
+        "thumb": "/media/thumbs/IMG_2510.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-05T16:28:22",
@@ -160,6 +172,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2511",
         "src": "/media/photos/IMG_2511.jpg",
+        "thumb": "/media/thumbs/IMG_2511.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-05T16:28:25",
@@ -168,6 +181,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2512",
         "src": "/media/photos/IMG_2512.jpg",
+        "thumb": "/media/thumbs/IMG_2512.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-05T16:28:35",
@@ -190,6 +204,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2530",
         "src": "/media/photos/IMG_2530.jpg",
+        "thumb": "/media/thumbs/IMG_2530.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-06T15:55:59",
@@ -212,6 +227,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2537",
         "src": "/media/photos/IMG_2537.jpg",
+        "thumb": "/media/thumbs/IMG_2537.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-06T16:31:04",
@@ -220,6 +236,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2538",
         "src": "/media/photos/IMG_2538.jpg",
+        "thumb": "/media/thumbs/IMG_2538.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-06T16:31:09",
@@ -242,6 +259,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2545",
         "src": "/media/photos/IMG_2545.jpg",
+        "thumb": "/media/thumbs/IMG_2545.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-06T22:14:26",
@@ -250,6 +268,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2546",
         "src": "/media/photos/IMG_2546.jpg",
+        "thumb": "/media/thumbs/IMG_2546.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-06T22:15:21",
@@ -258,6 +277,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2547",
         "src": "/media/photos/IMG_2547.jpg",
+        "thumb": "/media/thumbs/IMG_2547.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-06T22:16:04",
@@ -280,6 +300,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2560",
         "src": "/media/photos/IMG_2560.jpg",
+        "thumb": "/media/thumbs/IMG_2560.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:06:03",
@@ -288,6 +309,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2561",
         "src": "/media/photos/IMG_2561.jpg",
+        "thumb": "/media/thumbs/IMG_2561.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:06:08",
@@ -296,6 +318,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2564",
         "src": "/media/photos/IMG_2564.jpg",
+        "thumb": "/media/thumbs/IMG_2564.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:07:30",
@@ -304,6 +327,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2565",
         "src": "/media/photos/IMG_2565.jpg",
+        "thumb": "/media/thumbs/IMG_2565.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:07:38",
@@ -312,6 +336,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2566",
         "src": "/media/photos/IMG_2566.jpg",
+        "thumb": "/media/thumbs/IMG_2566.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:07:41",
@@ -320,6 +345,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2567",
         "src": "/media/photos/IMG_2567.jpg",
+        "thumb": "/media/thumbs/IMG_2567.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:07:45",
@@ -328,6 +354,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2568",
         "src": "/media/photos/IMG_2568.jpg",
+        "thumb": "/media/thumbs/IMG_2568.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:07:48",
@@ -336,6 +363,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2569",
         "src": "/media/photos/IMG_2569.jpg",
+        "thumb": "/media/thumbs/IMG_2569.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:07:52",
@@ -344,6 +372,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2571",
         "src": "/media/photos/IMG_2571.jpg",
+        "thumb": "/media/thumbs/IMG_2571.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:08:21",
@@ -352,6 +381,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2573",
         "src": "/media/photos/IMG_2573.jpg",
+        "thumb": "/media/thumbs/IMG_2573.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:08:24",
@@ -360,6 +390,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2574",
         "src": "/media/photos/IMG_2574.jpg",
+        "thumb": "/media/thumbs/IMG_2574.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:08:26",
@@ -368,6 +399,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2575",
         "src": "/media/photos/IMG_2575.jpg",
+        "thumb": "/media/thumbs/IMG_2575.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:08:29",
@@ -376,6 +408,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2576",
         "src": "/media/photos/IMG_2576.jpg",
+        "thumb": "/media/thumbs/IMG_2576.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:08:31",
@@ -384,6 +417,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2577",
         "src": "/media/photos/IMG_2577.jpg",
+        "thumb": "/media/thumbs/IMG_2577.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:08:32",
@@ -392,6 +426,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2579",
         "src": "/media/photos/IMG_2579.jpg",
+        "thumb": "/media/thumbs/IMG_2579.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:08:37",
@@ -400,6 +435,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2581",
         "src": "/media/photos/IMG_2581.jpg",
+        "thumb": "/media/thumbs/IMG_2581.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:08:55",
@@ -408,6 +444,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2582",
         "src": "/media/photos/IMG_2582.jpg",
+        "thumb": "/media/thumbs/IMG_2582.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:08:57",
@@ -416,6 +453,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2584",
         "src": "/media/photos/IMG_2584.jpg",
+        "thumb": "/media/thumbs/IMG_2584.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:09:04",
@@ -424,6 +462,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2586",
         "src": "/media/photos/IMG_2586.jpg",
+        "thumb": "/media/thumbs/IMG_2586.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:09:11",
@@ -432,6 +471,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2587",
         "src": "/media/photos/IMG_2587.jpg",
+        "thumb": "/media/thumbs/IMG_2587.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:09:12",
@@ -440,6 +480,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2591",
         "src": "/media/photos/IMG_2591.jpg",
+        "thumb": "/media/thumbs/IMG_2591.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:09:32",
@@ -448,6 +489,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2593",
         "src": "/media/photos/IMG_2593.jpg",
+        "thumb": "/media/thumbs/IMG_2593.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:09:36",
@@ -456,6 +498,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2594",
         "src": "/media/photos/IMG_2594.jpg",
+        "thumb": "/media/thumbs/IMG_2594.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T12:09:41",
@@ -478,6 +521,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2610",
         "src": "/media/photos/IMG_2610.jpg",
+        "thumb": "/media/thumbs/IMG_2610.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-07T18:00:01",
@@ -500,6 +544,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2611",
         "src": "/media/photos/IMG_2611.jpg",
+        "thumb": "/media/thumbs/IMG_2611.jpg",
         "width": 2560,
         "height": 1920,
         "takenAt": "2026-08-07T19:37:00",
@@ -508,6 +553,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2612",
         "src": "/media/photos/IMG_2612.jpg",
+        "thumb": "/media/thumbs/IMG_2612.jpg",
         "width": 2560,
         "height": 1920,
         "takenAt": "2026-08-07T19:37:07",
@@ -530,6 +576,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2613",
         "src": "/media/photos/IMG_2613.jpg",
+        "thumb": "/media/thumbs/IMG_2613.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T11:46:51",
@@ -538,6 +585,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2614",
         "src": "/media/photos/IMG_2614.jpg",
+        "thumb": "/media/thumbs/IMG_2614.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T11:46:52",
@@ -560,6 +608,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2621",
         "src": "/media/photos/IMG_2621.jpg",
+        "thumb": "/media/thumbs/IMG_2621.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T11:51:48",
@@ -568,6 +617,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2622",
         "src": "/media/photos/IMG_2622.jpg",
+        "thumb": "/media/thumbs/IMG_2622.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T11:51:50",
@@ -576,6 +626,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2623",
         "src": "/media/photos/IMG_2623.jpg",
+        "thumb": "/media/thumbs/IMG_2623.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T11:51:52",
@@ -584,6 +635,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2624",
         "src": "/media/photos/IMG_2624.jpg",
+        "thumb": "/media/thumbs/IMG_2624.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T11:51:53",
@@ -592,6 +644,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2625",
         "src": "/media/photos/IMG_2625.jpg",
+        "thumb": "/media/thumbs/IMG_2625.jpg",
         "width": 284,
         "height": 403,
         "takenAt": "2026-08-08T11:51:54",
@@ -600,6 +653,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2626",
         "src": "/media/photos/IMG_2626.jpg",
+        "thumb": "/media/thumbs/IMG_2626.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T11:51:55",
@@ -608,6 +662,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2627",
         "src": "/media/photos/IMG_2627.jpg",
+        "thumb": "/media/thumbs/IMG_2627.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T11:51:56",
@@ -616,6 +671,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2628",
         "src": "/media/photos/IMG_2628.jpg",
+        "thumb": "/media/thumbs/IMG_2628.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T11:51:58",
@@ -624,6 +680,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2629",
         "src": "/media/photos/IMG_2629.jpg",
+        "thumb": "/media/thumbs/IMG_2629.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T11:51:59",
@@ -646,6 +703,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2630",
         "src": "/media/photos/IMG_2630.jpg",
+        "thumb": "/media/thumbs/IMG_2630.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T11:54:38",
@@ -654,6 +712,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2631",
         "src": "/media/photos/IMG_2631.jpg",
+        "thumb": "/media/thumbs/IMG_2631.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T11:54:40",
@@ -676,6 +735,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2640",
         "src": "/media/photos/IMG_2640.jpg",
+        "thumb": "/media/thumbs/IMG_2640.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T18:52:11",
@@ -684,6 +744,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2641",
         "src": "/media/photos/IMG_2641.jpg",
+        "thumb": "/media/thumbs/IMG_2641.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T18:52:15",
@@ -692,6 +753,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2642",
         "src": "/media/photos/IMG_2642.jpg",
+        "thumb": "/media/thumbs/IMG_2642.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T18:52:15",
@@ -700,6 +762,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2643",
         "src": "/media/photos/IMG_2643.jpg",
+        "thumb": "/media/thumbs/IMG_2643.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T18:52:16",
@@ -708,6 +771,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2646",
         "src": "/media/photos/IMG_2646.jpg",
+        "thumb": "/media/thumbs/IMG_2646.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T18:52:48",
@@ -716,6 +780,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2647",
         "src": "/media/photos/IMG_2647.jpg",
+        "thumb": "/media/thumbs/IMG_2647.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T18:52:52",
@@ -724,6 +789,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2648",
         "src": "/media/photos/IMG_2648.jpg",
+        "thumb": "/media/thumbs/IMG_2648.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T18:52:53",
@@ -746,6 +812,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2649",
         "src": "/media/photos/IMG_2649.jpg",
+        "thumb": "/media/thumbs/IMG_2649.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T18:53:15",
@@ -754,6 +821,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2650",
         "src": "/media/photos/IMG_2650.jpg",
+        "thumb": "/media/thumbs/IMG_2650.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T18:53:27",
@@ -762,6 +830,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2653",
         "src": "/media/photos/IMG_2653.jpg",
+        "thumb": "/media/thumbs/IMG_2653.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T18:53:33",
@@ -770,6 +839,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2654",
         "src": "/media/photos/IMG_2654.jpg",
+        "thumb": "/media/thumbs/IMG_2654.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T18:53:42",
@@ -778,6 +848,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2657",
         "src": "/media/photos/IMG_2657.jpg",
+        "thumb": "/media/thumbs/IMG_2657.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T18:53:46",
@@ -786,6 +857,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2659",
         "src": "/media/photos/IMG_2659.jpg",
+        "thumb": "/media/thumbs/IMG_2659.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T18:53:51",
@@ -794,6 +866,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2660",
         "src": "/media/photos/IMG_2660.jpg",
+        "thumb": "/media/thumbs/IMG_2660.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T18:53:52",
@@ -802,6 +875,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2661",
         "src": "/media/photos/IMG_2661.jpg",
+        "thumb": "/media/thumbs/IMG_2661.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T18:53:57",
@@ -810,6 +884,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2662",
         "src": "/media/photos/IMG_2662.jpg",
+        "thumb": "/media/thumbs/IMG_2662.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T18:54:01",
@@ -818,6 +893,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2663",
         "src": "/media/photos/IMG_2663.jpg",
+        "thumb": "/media/thumbs/IMG_2663.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T18:54:02",
@@ -826,6 +902,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2666",
         "src": "/media/photos/IMG_2666.jpg",
+        "thumb": "/media/thumbs/IMG_2666.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T18:54:04",
@@ -848,6 +925,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2668",
         "src": "/media/photos/IMG_2668.jpg",
+        "thumb": "/media/thumbs/IMG_2668.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T22:10:01",
@@ -856,6 +934,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2669",
         "src": "/media/photos/IMG_2669.jpg",
+        "thumb": "/media/thumbs/IMG_2669.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-08T22:10:02",
@@ -878,6 +957,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2674",
         "src": "/media/photos/IMG_2674.jpg",
+        "thumb": "/media/thumbs/IMG_2674.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T12:47:38",
@@ -886,6 +966,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2675",
         "src": "/media/photos/IMG_2675.jpg",
+        "thumb": "/media/thumbs/IMG_2675.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T12:47:41",
@@ -894,6 +975,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2676",
         "src": "/media/photos/IMG_2676.jpg",
+        "thumb": "/media/thumbs/IMG_2676.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T12:47:42",
@@ -916,6 +998,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2677",
         "src": "/media/photos/IMG_2677.jpg",
+        "thumb": "/media/thumbs/IMG_2677.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T13:04:32",
@@ -938,6 +1021,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2701",
         "src": "/media/photos/IMG_2701.jpg",
+        "thumb": "/media/thumbs/IMG_2701.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T13:44:24",
@@ -946,6 +1030,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2702",
         "src": "/media/photos/IMG_2702.jpg",
+        "thumb": "/media/thumbs/IMG_2702.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T13:44:25",
@@ -954,6 +1039,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2703",
         "src": "/media/photos/IMG_2703.jpg",
+        "thumb": "/media/thumbs/IMG_2703.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T13:44:26",
@@ -962,6 +1048,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2704",
         "src": "/media/photos/IMG_2704.jpg",
+        "thumb": "/media/thumbs/IMG_2704.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T13:44:27",
@@ -970,6 +1057,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2705",
         "src": "/media/photos/IMG_2705.jpg",
+        "thumb": "/media/thumbs/IMG_2705.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T13:44:28",
@@ -978,6 +1066,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2706",
         "src": "/media/photos/IMG_2706.jpg",
+        "thumb": "/media/thumbs/IMG_2706.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T13:44:30",
@@ -1000,6 +1089,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2721",
         "src": "/media/photos/IMG_2721.jpg",
+        "thumb": "/media/thumbs/IMG_2721.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T14:07:59",
@@ -1008,6 +1098,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2722",
         "src": "/media/photos/IMG_2722.jpg",
+        "thumb": "/media/thumbs/IMG_2722.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T14:08:03",
@@ -1030,6 +1121,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2726",
         "src": "/media/photos/IMG_2726.jpg",
+        "thumb": "/media/thumbs/IMG_2726.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T15:23:05",
@@ -1038,6 +1130,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2727",
         "src": "/media/photos/IMG_2727.jpg",
+        "thumb": "/media/thumbs/IMG_2727.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T15:23:20",
@@ -1046,6 +1139,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2728",
         "src": "/media/photos/IMG_2728.jpg",
+        "thumb": "/media/thumbs/IMG_2728.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T15:23:21",
@@ -1054,6 +1148,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2729",
         "src": "/media/photos/IMG_2729.jpg",
+        "thumb": "/media/thumbs/IMG_2729.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T15:23:23",
@@ -1062,6 +1157,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2730",
         "src": "/media/photos/IMG_2730.jpg",
+        "thumb": "/media/thumbs/IMG_2730.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T15:23:24",
@@ -1070,6 +1166,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2731",
         "src": "/media/photos/IMG_2731.jpg",
+        "thumb": "/media/thumbs/IMG_2731.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T15:23:36",
@@ -1078,6 +1175,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2732",
         "src": "/media/photos/IMG_2732.jpg",
+        "thumb": "/media/thumbs/IMG_2732.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T15:23:37",
@@ -1086,6 +1184,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2733",
         "src": "/media/photos/IMG_2733.jpg",
+        "thumb": "/media/thumbs/IMG_2733.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T15:23:38",
@@ -1094,6 +1193,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2734",
         "src": "/media/photos/IMG_2734.jpg",
+        "thumb": "/media/thumbs/IMG_2734.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T15:23:39",
@@ -1116,6 +1216,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2736",
         "src": "/media/photos/IMG_2736.jpg",
+        "thumb": "/media/thumbs/IMG_2736.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T15:24:20",
@@ -1124,6 +1225,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2737",
         "src": "/media/photos/IMG_2737.jpg",
+        "thumb": "/media/thumbs/IMG_2737.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T15:24:22",
@@ -1132,6 +1234,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2738",
         "src": "/media/photos/IMG_2738.jpg",
+        "thumb": "/media/thumbs/IMG_2738.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T15:24:24",
@@ -1140,6 +1243,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2739",
         "src": "/media/photos/IMG_2739.jpg",
+        "thumb": "/media/thumbs/IMG_2739.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T15:24:27",
@@ -1148,6 +1252,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2740",
         "src": "/media/photos/IMG_2740.jpg",
+        "thumb": "/media/thumbs/IMG_2740.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T15:24:29",
@@ -1170,6 +1275,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2741",
         "src": "/media/photos/IMG_2741.jpg",
+        "thumb": "/media/thumbs/IMG_2741.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T15:24:49",
@@ -1178,6 +1284,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2742",
         "src": "/media/photos/IMG_2742.jpg",
+        "thumb": "/media/thumbs/IMG_2742.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T15:24:53",
@@ -1186,6 +1293,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2743",
         "src": "/media/photos/IMG_2743.jpg",
+        "thumb": "/media/thumbs/IMG_2743.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T15:24:53",
@@ -1194,6 +1302,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2744",
         "src": "/media/photos/IMG_2744.jpg",
+        "thumb": "/media/thumbs/IMG_2744.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T15:24:54",
@@ -1202,6 +1311,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2745",
         "src": "/media/photos/IMG_2745.jpg",
+        "thumb": "/media/thumbs/IMG_2745.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T15:24:55",
@@ -1224,6 +1334,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2766",
         "src": "/media/photos/IMG_2766.jpg",
+        "thumb": "/media/thumbs/IMG_2766.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T19:28:18",
@@ -1246,6 +1357,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2772",
         "src": "/media/photos/IMG_2772.jpg",
+        "thumb": "/media/thumbs/IMG_2772.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T19:36:53",
@@ -1254,6 +1366,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2773",
         "src": "/media/photos/IMG_2773.jpg",
+        "thumb": "/media/thumbs/IMG_2773.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T19:36:54",
@@ -1262,6 +1375,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2774",
         "src": "/media/photos/IMG_2774.jpg",
+        "thumb": "/media/thumbs/IMG_2774.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T19:36:56",
@@ -1270,6 +1384,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2775",
         "src": "/media/photos/IMG_2775.jpg",
+        "thumb": "/media/thumbs/IMG_2775.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T19:36:58",
@@ -1278,6 +1393,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2776",
         "src": "/media/photos/IMG_2776.jpg",
+        "thumb": "/media/thumbs/IMG_2776.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T19:36:59",
@@ -1286,6 +1402,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2777",
         "src": "/media/photos/IMG_2777.jpg",
+        "thumb": "/media/thumbs/IMG_2777.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T19:37:00",
@@ -1308,6 +1425,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2778",
         "src": "/media/photos/IMG_2778.jpg",
+        "thumb": "/media/thumbs/IMG_2778.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T19:37:18",
@@ -1316,6 +1434,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2779",
         "src": "/media/photos/IMG_2779.jpg",
+        "thumb": "/media/thumbs/IMG_2779.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T19:37:19",
@@ -1338,6 +1457,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2780",
         "src": "/media/photos/IMG_2780.jpg",
+        "thumb": "/media/thumbs/IMG_2780.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T19:37:36",
@@ -1346,6 +1466,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2781",
         "src": "/media/photos/IMG_2781.jpg",
+        "thumb": "/media/thumbs/IMG_2781.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T19:37:38",
@@ -1354,6 +1475,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2782",
         "src": "/media/photos/IMG_2782.jpg",
+        "thumb": "/media/thumbs/IMG_2782.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T19:37:39",
@@ -1376,6 +1498,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2784",
         "src": "/media/photos/IMG_2784.jpg",
+        "thumb": "/media/thumbs/IMG_2784.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T19:39:43",
@@ -1384,6 +1507,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2785",
         "src": "/media/photos/IMG_2785.jpg",
+        "thumb": "/media/thumbs/IMG_2785.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T19:39:46",
@@ -1392,6 +1516,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2786",
         "src": "/media/photos/IMG_2786.jpg",
+        "thumb": "/media/thumbs/IMG_2786.jpg",
         "width": 2560,
         "height": 1920,
         "takenAt": "2026-08-09T19:39:48",
@@ -1400,6 +1525,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2787",
         "src": "/media/photos/IMG_2787.jpg",
+        "thumb": "/media/thumbs/IMG_2787.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T19:39:50",
@@ -1408,6 +1534,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2788",
         "src": "/media/photos/IMG_2788.jpg",
+        "thumb": "/media/thumbs/IMG_2788.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T19:39:51",
@@ -1416,6 +1543,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2789",
         "src": "/media/photos/IMG_2789.jpg",
+        "thumb": "/media/thumbs/IMG_2789.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T19:39:52",
@@ -1438,6 +1566,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2792",
         "src": "/media/photos/IMG_2792.jpg",
+        "thumb": "/media/thumbs/IMG_2792.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T19:41:46",
@@ -1446,6 +1575,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2793",
         "src": "/media/photos/IMG_2793.jpg",
+        "thumb": "/media/thumbs/IMG_2793.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T19:41:48",
@@ -1468,6 +1598,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2794",
         "src": "/media/photos/IMG_2794.jpg",
+        "thumb": "/media/thumbs/IMG_2794.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-09T19:42:10",
@@ -1490,6 +1621,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2800",
         "src": "/media/photos/IMG_2800.jpg",
+        "thumb": "/media/thumbs/IMG_2800.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T12:49:05",
@@ -1512,6 +1644,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2810",
         "src": "/media/photos/IMG_2810.jpg",
+        "thumb": "/media/thumbs/IMG_2810.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T19:33:12",
@@ -1520,6 +1653,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2811",
         "src": "/media/photos/IMG_2811.jpg",
+        "thumb": "/media/thumbs/IMG_2811.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T19:33:14",
@@ -1528,6 +1662,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2812",
         "src": "/media/photos/IMG_2812.jpg",
+        "thumb": "/media/thumbs/IMG_2812.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T19:33:17",
@@ -1536,6 +1671,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2813",
         "src": "/media/photos/IMG_2813.jpg",
+        "thumb": "/media/thumbs/IMG_2813.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T19:33:18",
@@ -1544,6 +1680,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2814",
         "src": "/media/photos/IMG_2814.jpg",
+        "thumb": "/media/thumbs/IMG_2814.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T19:33:19",
@@ -1552,6 +1689,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2815",
         "src": "/media/photos/IMG_2815.jpg",
+        "thumb": "/media/thumbs/IMG_2815.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T19:33:20",
@@ -1560,6 +1698,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2816",
         "src": "/media/photos/IMG_2816.jpg",
+        "thumb": "/media/thumbs/IMG_2816.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T19:33:22",
@@ -1568,6 +1707,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2817",
         "src": "/media/photos/IMG_2817.jpg",
+        "thumb": "/media/thumbs/IMG_2817.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T19:33:23",
@@ -1576,6 +1716,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2818",
         "src": "/media/photos/IMG_2818.jpg",
+        "thumb": "/media/thumbs/IMG_2818.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T19:33:24",
@@ -1584,6 +1725,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2819",
         "src": "/media/photos/IMG_2819.jpg",
+        "thumb": "/media/thumbs/IMG_2819.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T19:33:25",
@@ -1592,6 +1734,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2820",
         "src": "/media/photos/IMG_2820.jpg",
+        "thumb": "/media/thumbs/IMG_2820.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T19:33:40",
@@ -1600,6 +1743,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2821",
         "src": "/media/photos/IMG_2821.jpg",
+        "thumb": "/media/thumbs/IMG_2821.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T19:33:40",
@@ -1608,6 +1752,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2822",
         "src": "/media/photos/IMG_2822.jpg",
+        "thumb": "/media/thumbs/IMG_2822.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T19:33:42",
@@ -1616,6 +1761,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2823",
         "src": "/media/photos/IMG_2823.jpg",
+        "thumb": "/media/thumbs/IMG_2823.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T19:33:43",
@@ -1624,6 +1770,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2824",
         "src": "/media/photos/IMG_2824.jpg",
+        "thumb": "/media/thumbs/IMG_2824.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T19:33:44",
@@ -1646,6 +1793,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2825",
         "src": "/media/photos/IMG_2825.jpg",
+        "thumb": "/media/thumbs/IMG_2825.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T19:34:22",
@@ -1654,6 +1802,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2826",
         "src": "/media/photos/IMG_2826.jpg",
+        "thumb": "/media/thumbs/IMG_2826.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T19:34:28",
@@ -1662,6 +1811,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2827",
         "src": "/media/photos/IMG_2827.jpg",
+        "thumb": "/media/thumbs/IMG_2827.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T19:34:30",
@@ -1670,6 +1820,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2828",
         "src": "/media/photos/IMG_2828.jpg",
+        "thumb": "/media/thumbs/IMG_2828.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T19:34:31",
@@ -1678,6 +1829,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2829",
         "src": "/media/photos/IMG_2829.jpg",
+        "thumb": "/media/thumbs/IMG_2829.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T19:34:33",
@@ -1686,6 +1838,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2830",
         "src": "/media/photos/IMG_2830.jpg",
+        "thumb": "/media/thumbs/IMG_2830.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T19:34:34",
@@ -1708,6 +1861,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2833",
         "src": "/media/photos/IMG_2833.jpg",
+        "thumb": "/media/thumbs/IMG_2833.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T21:08:04",
@@ -1716,6 +1870,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2834",
         "src": "/media/photos/IMG_2834.jpg",
+        "thumb": "/media/thumbs/IMG_2834.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T21:08:05",
@@ -1724,6 +1879,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2835",
         "src": "/media/photos/IMG_2835.jpg",
+        "thumb": "/media/thumbs/IMG_2835.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T21:08:05",
@@ -1732,6 +1888,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2836",
         "src": "/media/photos/IMG_2836.jpg",
+        "thumb": "/media/thumbs/IMG_2836.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T21:08:06",
@@ -1740,6 +1897,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2837",
         "src": "/media/photos/IMG_2837.jpg",
+        "thumb": "/media/thumbs/IMG_2837.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T21:08:07",
@@ -1748,6 +1906,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2838",
         "src": "/media/photos/IMG_2838.jpg",
+        "thumb": "/media/thumbs/IMG_2838.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T21:08:09",
@@ -1756,6 +1915,7 @@ export const series: Series[] = [
       {
         "id": "IMG_2839",
         "src": "/media/photos/IMG_2839.jpg",
+        "thumb": "/media/thumbs/IMG_2839.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": "2026-08-10T21:08:10",
@@ -1778,6 +1938,7 @@ export const series: Series[] = [
       {
         "id": "EXTRA_09",
         "src": "/media/photos/EXTRA_09.jpg",
+        "thumb": "/media/thumbs/EXTRA_09.jpg",
         "width": 1280,
         "height": 960,
         "takenAt": null,
@@ -1786,6 +1947,7 @@ export const series: Series[] = [
       {
         "id": "EXTRA_10",
         "src": "/media/photos/EXTRA_10.jpg",
+        "thumb": "/media/thumbs/EXTRA_10.jpg",
         "width": 960,
         "height": 1280,
         "takenAt": null,
@@ -1794,6 +1956,7 @@ export const series: Series[] = [
       {
         "id": "EXTRA_13",
         "src": "/media/photos/EXTRA_13.jpg",
+        "thumb": "/media/thumbs/EXTRA_13.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": null,
@@ -1802,6 +1965,7 @@ export const series: Series[] = [
       {
         "id": "EXTRA_14",
         "src": "/media/photos/EXTRA_14.jpg",
+        "thumb": "/media/thumbs/EXTRA_14.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": null,
@@ -1810,6 +1974,7 @@ export const series: Series[] = [
       {
         "id": "EXTRA_15",
         "src": "/media/photos/EXTRA_15.jpg",
+        "thumb": "/media/thumbs/EXTRA_15.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": null,
@@ -1832,6 +1997,7 @@ export const series: Series[] = [
       {
         "id": "EXTRA_01",
         "src": "/media/photos/EXTRA_01.jpg",
+        "thumb": "/media/thumbs/EXTRA_01.jpg",
         "width": 1280,
         "height": 960,
         "takenAt": null,
@@ -1840,6 +2006,7 @@ export const series: Series[] = [
       {
         "id": "EXTRA_02",
         "src": "/media/photos/EXTRA_02.jpg",
+        "thumb": "/media/thumbs/EXTRA_02.jpg",
         "width": 960,
         "height": 1280,
         "takenAt": null,
@@ -1848,6 +2015,7 @@ export const series: Series[] = [
       {
         "id": "EXTRA_03",
         "src": "/media/photos/EXTRA_03.jpg",
+        "thumb": "/media/thumbs/EXTRA_03.jpg",
         "width": 960,
         "height": 1280,
         "takenAt": null,
@@ -1856,6 +2024,7 @@ export const series: Series[] = [
       {
         "id": "EXTRA_04",
         "src": "/media/photos/EXTRA_04.jpg",
+        "thumb": "/media/thumbs/EXTRA_04.jpg",
         "width": 960,
         "height": 1280,
         "takenAt": null,
@@ -1864,6 +2033,7 @@ export const series: Series[] = [
       {
         "id": "EXTRA_05",
         "src": "/media/photos/EXTRA_05.jpg",
+        "thumb": "/media/thumbs/EXTRA_05.jpg",
         "width": 960,
         "height": 1280,
         "takenAt": null,
@@ -1872,6 +2042,7 @@ export const series: Series[] = [
       {
         "id": "EXTRA_06",
         "src": "/media/photos/EXTRA_06.jpg",
+        "thumb": "/media/thumbs/EXTRA_06.jpg",
         "width": 1280,
         "height": 960,
         "takenAt": null,
@@ -1880,6 +2051,7 @@ export const series: Series[] = [
       {
         "id": "EXTRA_07",
         "src": "/media/photos/EXTRA_07.jpg",
+        "thumb": "/media/thumbs/EXTRA_07.jpg",
         "width": 1280,
         "height": 960,
         "takenAt": null,
@@ -1888,6 +2060,7 @@ export const series: Series[] = [
       {
         "id": "EXTRA_08",
         "src": "/media/photos/EXTRA_08.jpg",
+        "thumb": "/media/thumbs/EXTRA_08.jpg",
         "width": 1280,
         "height": 960,
         "takenAt": null,
@@ -1896,6 +2069,7 @@ export const series: Series[] = [
       {
         "id": "EXTRA_11",
         "src": "/media/photos/EXTRA_11.jpg",
+        "thumb": "/media/thumbs/EXTRA_11.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": null,
@@ -1904,6 +2078,7 @@ export const series: Series[] = [
       {
         "id": "EXTRA_12",
         "src": "/media/photos/EXTRA_12.jpg",
+        "thumb": "/media/thumbs/EXTRA_12.jpg",
         "width": 1920,
         "height": 2560,
         "takenAt": null,

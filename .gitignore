@@ -54,3 +54,6 @@ next-env.d.ts
 /public/media/zip/
 /scripts/media-index.json
 /scripts/photo-times.json
+
+# статический экспорт
+/out/

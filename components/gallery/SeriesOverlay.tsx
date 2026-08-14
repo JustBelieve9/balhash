@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import type { Series } from "@/content/media.generated";
 import { DownloadLink } from "./DownloadLink";
+import { asset } from "@/lib/asset";
 import { seriesLabel, seriesZip } from "@/lib/series";
 import { formatFrames } from "@/lib/format";
 
@@ -69,7 +70,7 @@ export function SeriesOverlay({
           {group.frames.map((frame, index) => (
             <figure key={frame.id}>
               <Image
-                src={frame.src}
+                src={asset(frame.thumb)}
                 alt=""
                 width={frame.width}
                 height={frame.height}

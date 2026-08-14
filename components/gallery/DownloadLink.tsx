@@ -3,6 +3,8 @@
  * and nothing should compete with the photographs. Vertical padding keeps the
  * touch target at 44px on phones without showing any chrome.
  */
+import { asset } from "@/lib/asset";
+
 export function DownloadLink({
   href,
   name,
@@ -16,7 +18,7 @@ export function DownloadLink({
 }) {
   return (
     <a
-      href={href}
+      href={asset(href)}
       // Empty string still sets the attribute, so a link without an explicit
       // file name (the series archives) also downloads instead of navigating.
       download={name ?? ""}

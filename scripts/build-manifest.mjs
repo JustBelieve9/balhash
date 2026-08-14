@@ -93,6 +93,7 @@ for (const photo of dated) {
   const frame = {
     id: photo.id,
     src: `/media/photos/${photo.id}.jpg`,
+    thumb: `/media/thumbs/${photo.id}.jpg`,
     width: photo.width,
     height: photo.height,
     takenAt: photo.takenAt,
@@ -136,6 +137,7 @@ for (const part of ["lake", "astana"]) {
     .map((photo) => ({
       id: photo.id,
       src: `/media/photos/${photo.id}.jpg`,
+      thumb: `/media/thumbs/${photo.id}.jpg`,
       width: photo.width,
       height: photo.height,
       takenAt: null,
@@ -231,7 +233,10 @@ export type Part = "lake" | "astana";
 
 export type Frame = {
   id: string;
+  /** Полный кадр: оверлей и скачивание. */
   src: string;
+  /** 1200 px: обложки в сетке. Полный кадр туда слишком тяжёл. */
+  thumb: string;
   width: number;
   height: number;
   takenAt: string | null;

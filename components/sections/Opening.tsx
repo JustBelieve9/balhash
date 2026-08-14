@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Series } from "@/content/media.generated";
 import { WallLabel } from "@/components/gallery/WallLabel";
 import { DownloadLink } from "@/components/gallery/DownloadLink";
+import { asset } from "@/lib/asset";
 import { FadeIn } from "@/components/chrome/FadeIn";
 import { seriesLabel } from "@/lib/series";
 
@@ -18,7 +19,7 @@ export function Opening({ group }: { group: Series }) {
       <FadeIn>
         <figure className={portrait ? "max-w-[560px]" : ""}>
           <Image
-            src={frame.src}
+            src={asset(frame.thumb)}
             alt=""
             width={frame.width}
             height={frame.height}

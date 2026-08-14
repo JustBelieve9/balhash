@@ -29,6 +29,7 @@ from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "public" / "media" / "photos"
+THUMBS = ROOT / "public" / "media" / "thumbs"
 
 SOURCES = [
     ("lake", ROOT / "Новая папка" / "Новая папка"),
@@ -46,6 +47,13 @@ SUFFIXES = {".heic", ".png", ".jpg", ".jpeg"}
 MAX_EDGE = 2560
 QUALITY = 82
 DECODE_QUALITY = 95
+
+# Обложки в сетке занимают примерно полэкрана, поэтому им хватает 800 px.
+# Полный кадр остаётся для оверлея и скачивания. Без этого на статическом
+# хостинге (там нет оптимизатора картинок) телефон тянул бы кадры по 600 КБ
+# в плитку шириной 160 px.
+THUMB_EDGE = 1200
+THUMB_QUALITY = 78
 
 EXCLUDED = set(json.loads((ROOT / "scripts" / "excluded.json").read_text())["ids"])
 
@@ -112,11 +120,21 @@ def convert_one(src: Path, dest: Path, tmpdir: Path) -> None:
         upright.thumbnail((MAX_EDGE, MAX_EDGE), Image.LANCZOS)
         upright = upright.convert("RGB")
         upright.save(dest, "JPEG", quality=QUALITY, optimize=True, progressive=True)
+
+        upright.thumbnail((THUMB_EDGE, THUMB_EDGE), Image.LANCZOS)
+        upright.save(
+            THUMBS / dest.name,
+            "JPEG",
+            quality=THUMB_QUALITY,
+            optimize=True,
+            progressive=True,
+        )
     decoded.unlink(missing_ok=True)
 
 
 force = "--force" in sys.argv
 OUT.mkdir(parents=True, exist_ok=True)
+THUMBS.mkdir(parents=True, exist_ok=True)
 
 entries: list[dict] = []
 seen: set[str] = set()
@@ -144,7 +162,7 @@ with tempfile.TemporaryDirectory() as tmpdir:
             seen.add(photo_id)
 
             dest = OUT / f"{photo_id}.jpg"
-            if not dest.exists() or force:
+            if not dest.exists() or not (THUMBS / dest.name).exists() or force:
                 convert_one(src, dest, Path(tmpdir))
 
             with Image.open(dest) as final:
@@ -167,7 +185,7 @@ with tempfile.TemporaryDirectory() as tmpdir:
 
         photo_id = f"EXTRA_{index:02d}"
         dest = OUT / f"{photo_id}.jpg"
-        if not dest.exists() or force:
+        if not dest.exists() or not (THUMBS / dest.name).exists() or force:
             convert_one(src, dest, Path(tmpdir))
 
         with Image.open(dest) as final:
@@ -189,7 +207,10 @@ with tempfile.TemporaryDirectory() as tmpdir:
 # public/media/photos is derived, not authored: anything without a source any
 # more (a photo deleted from the folder, or a newly excluded id) goes too.
 kept = {entry["id"] for entry in entries}
-for stale in sorted(p for p in OUT.glob("*.jpg") if p.stem not in kept):
+for stale in sorted(
+    [p for p in OUT.glob("*.jpg") if p.stem not in kept]
+    + [p for p in THUMBS.glob("*.jpg") if p.stem not in kept]
+):
     stale.unlink()
     print(f"removed {stale.name} (no source)")
 

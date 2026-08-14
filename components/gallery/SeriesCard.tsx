@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import type { Series } from "@/content/media.generated";
+import { asset } from "@/lib/asset";
 import { WallLabel } from "./WallLabel";
 import { StackSheets } from "./StackSheets";
 import { seriesLabel } from "@/lib/series";
@@ -33,7 +34,7 @@ export function SeriesCard({
       >
         {stacked && <StackSheets />}
         <Image
-          src={cover.src}
+          src={asset(cover.thumb)}
           alt=""
           width={cover.width}
           height={cover.height}

@@ -6,6 +6,7 @@ import type { Film } from "@/content/films";
 import { films, filmsNote } from "@/content/films";
 import { DownloadLink } from "@/components/gallery/DownloadLink";
 import { FadeIn } from "@/components/chrome/FadeIn";
+import { asset } from "@/lib/asset";
 import { formatDuration } from "@/lib/format";
 
 /**
@@ -20,7 +21,7 @@ function FilmItem({ film }: { film: Film }) {
       {playing ? (
         <video
           src={film.src}
-          poster={film.poster}
+          poster={asset(film.poster)}
           controls
           autoPlay
           playsInline
@@ -35,7 +36,7 @@ function FilmItem({ film }: { film: Film }) {
           className="relative block w-full cursor-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
         >
           <Image
-            src={film.poster}
+            src={asset(film.poster)}
             alt=""
             width={1080}
             height={1920}
