@@ -23,19 +23,19 @@ export const films: Film[] = [
   {
     id: "tuda",
     title: "Туда",
-    note: "Дорога на озеро и четыре дня на берегу.",
+    note: "Дорога на озеро.",
     src: "/media/films/tuda.mp4",
     poster: "/media/films/tuda.jpg",
-    duration: 1057,
+    duration: 775,
     downloadName: "balkhash-film-1-tuda.mp4",
   },
   {
     id: "obratno",
     title: "Обратно",
-    note: "Дождь на трассе, Караганда, Астана.",
+    note: "От озера домой через Караганду и Астану.",
     src: "/media/films/obratno.mp4",
     poster: "/media/films/obratno.jpg",
-    duration: 775,
+    duration: 1057,
     downloadName: "balkhash-film-2-obratno.mp4",
   },
 ];

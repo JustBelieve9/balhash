@@ -57,5 +57,7 @@ convert() {
   ls -lh "$OUT/$slug.mp4" | awk '{print "done " $9 " " $5}'
 }
 
-convert "$SRC/0813.mp4" "tuda"
-convert "$SRC/copy_94FDA99F-722D-43DF-9CDA-3158B8DE16BE.MOV" "obratno"
+# Какой файл какая часть, видно по содержимому, а не по имени: 0813 начинается
+# уже у воды и уезжает от неё, значит это дорога домой.
+convert "$SRC/copy_94FDA99F-722D-43DF-9CDA-3158B8DE16BE.MOV" "tuda"
+convert "$SRC/0813.mp4" "obratno"
