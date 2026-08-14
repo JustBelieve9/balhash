@@ -32,14 +32,14 @@ export function SeriesCard({
         aria-label={`${label.title}. ${label.medium}`}
         className="group relative block w-full cursor-none text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
       >
-        {stacked && <StackSheets />}
+        {stacked && <StackSheets frames={group.frames.slice(1)} />}
         <Image
           src={asset(cover.thumb)}
           alt=""
           width={cover.width}
           height={cover.height}
-          sizes="(max-width: 768px) 100vw, 45vw"
-          className="relative h-auto w-full"
+          sizes="(max-width: 768px) 50vw, 30vw"
+          className="relative h-auto w-full border border-line"
         />
       </button>
       <WallLabel {...label} />

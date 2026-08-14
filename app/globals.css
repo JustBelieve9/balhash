@@ -12,7 +12,29 @@
 }
 
 body {
-  background: var(--color-background);
+  /* Едва заметная подсветка вместо ровного белого: холодное пятно воды слева,
+     тёплое пятно степи справа. Проценты специально почти нулевые - фон не
+     должен спорить с фотографиями, он только снимает больничную стерильность.
+     Слой закреплён, поэтому при прокрутке пятна стоят на месте. */
+  background-color: var(--color-background);
+  background-image:
+    radial-gradient(
+      70vw 60vh at 12% 8%,
+      rgba(31, 194, 176, 0.055),
+      transparent 62%
+    ),
+    radial-gradient(
+      60vw 55vh at 92% 32%,
+      rgba(196, 166, 120, 0.05),
+      transparent 60%
+    ),
+    radial-gradient(
+      65vw 50vh at 45% 96%,
+      rgba(120, 141, 176, 0.045),
+      transparent 62%
+    );
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   color: var(--color-foreground);
   font-family: var(--font-inter), system-ui, sans-serif;
   font-weight: 300;

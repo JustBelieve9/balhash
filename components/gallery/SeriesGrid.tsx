@@ -11,7 +11,10 @@ export function SeriesGrid({ series }: { series: Series[] }) {
 
   return (
     <>
-      <div className="grid grid-cols-1 gap-x-16 gap-y-20 md:grid-cols-2 md:gap-x-24 md:gap-y-32">
+      {/* Плотнее, чем классическая галерейная развеска: серий много, и главное
+          тут - охватить их взглядом. Зазор оставлен такой, чтобы наклонённый
+          веер не залезал на соседей. */}
+      <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 md:gap-x-8 md:gap-y-14">
         {series.map((group) => (
           <FadeIn key={group.id}>
             <SeriesCard group={group} onOpen={setOpen} />

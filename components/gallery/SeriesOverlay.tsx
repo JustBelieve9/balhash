@@ -42,7 +42,7 @@ export function SeriesOverlay({
       role="dialog"
       aria-modal="true"
       aria-label={label.title}
-      className="fixed inset-0 z-40 overflow-y-auto bg-background"
+      className="fixed inset-0 z-40 overflow-y-auto bg-background/97 backdrop-blur-sm"
       initial={reduce ? false : { opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.35, ease: "linear" }}
@@ -66,7 +66,7 @@ export function SeriesOverlay({
           </button>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-x-10 gap-y-16 md:mt-16 md:grid-cols-2 md:gap-x-16 md:gap-y-24">
+        <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 md:mt-14 md:grid-cols-3 md:gap-x-8 md:gap-y-14">
           {group.frames.map((frame, index) => (
             <figure key={frame.id}>
               <Image
@@ -74,8 +74,8 @@ export function SeriesOverlay({
                 alt=""
                 width={frame.width}
                 height={frame.height}
-                sizes="(max-width: 768px) 100vw, 45vw"
-                className="h-auto w-full"
+                sizes="(max-width: 768px) 50vw, 30vw"
+                className="h-auto w-full border border-line"
               />
               <figcaption className="label mt-4 flex items-center justify-between gap-4 text-muted">
                 <span className="tabular">
