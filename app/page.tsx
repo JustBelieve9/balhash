@@ -7,7 +7,6 @@ import { Hero } from "@/components/sections/Hero";
 import { Opening } from "@/components/sections/Opening";
 import { Films } from "@/components/sections/Films";
 import { Part } from "@/components/sections/Part";
-import { Chronicle } from "@/components/sections/Chronicle";
 import { Archive } from "@/components/sections/Archive";
 import { Download } from "@/components/sections/Download";
 import { SeriesGrid } from "@/components/gallery/SeriesGrid";
@@ -34,7 +33,6 @@ export default function Home() {
           <SeriesGrid series={lake} />
         </Part>
 
-        <Chronicle />
 
         <Part id="astana" index="ЧАСТЬ ВТОРАЯ" title="Астана" note={astanaNote}>
           <SeriesGrid series={astana} />

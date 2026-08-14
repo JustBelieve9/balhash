@@ -11,34 +11,38 @@
   --font-sans: var(--font-inter);
 }
 
-body {
-  /* Едва заметная подсветка вместо ровного белого: холодное пятно воды слева,
-     тёплое пятно степи справа. Проценты специально почти нулевые - фон не
-     должен спорить с фотографиями, он только снимает больничную стерильность.
-     Слой закреплён, поэтому при прокрутке пятна стоят на месте. */
+/* Белый живёт на html, а не на body: иначе он закрыл бы собой слой с пятнами,
+   который лежит ниже содержимого (см. components/chrome/Backdrop.tsx). */
+html {
   background-color: var(--color-background);
-  background-image:
-    radial-gradient(
-      70vw 60vh at 12% 8%,
-      rgba(31, 194, 176, 0.055),
-      transparent 62%
-    ),
-    radial-gradient(
-      60vw 55vh at 92% 32%,
-      rgba(196, 166, 120, 0.05),
-      transparent 60%
-    ),
-    radial-gradient(
-      65vw 50vh at 45% 96%,
-      rgba(120, 141, 176, 0.045),
-      transparent 62%
-    );
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+}
+
+body {
+  background-color: transparent;
   color: var(--color-foreground);
   font-family: var(--font-inter), system-ui, sans-serif;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Пятна плывут по своим траекториям и с разной длительностью, поэтому рисунок
+   фона не повторяется и не читается как петля. */
+@keyframes drift-a {
+  to {
+    transform: translate3d(9vw, 7vh, 0) scale(1.12);
+  }
+}
+
+@keyframes drift-b {
+  to {
+    transform: translate3d(-11vw, 9vh, 0) scale(1.16);
+  }
+}
+
+@keyframes drift-c {
+  to {
+    transform: translate3d(7vw, -8vh, 0) scale(1.1);
+  }
 }
 
 ::selection {

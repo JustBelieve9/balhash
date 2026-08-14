@@ -1,14 +1,13 @@
 /**
- * Файлы фильмов лежат в GitHub Releases, а не в public/: в git нельзя класть
- * файлы больше 100 МБ, а у Vercel на бесплатном тарифе тот же потолок.
- * Ссылка отдаёт файл кусками, поэтому плеер на странице работает как обычно.
+ * Фильмы лежат в public/, а не в GitHub Releases, хотя релиз и снимал бы
+ * ограничение на размер. Причина: релиз отдаёт вложения как
+ * application/octet-stream с content-disposition: attachment, и Safari такое
+ * встроенным плеером не проигрывает - показывает чёрный прямоугольник с
+ * перечёркнутым play. Chrome содержимое угадывает, Safari принципиально нет.
  *
- * Перезалить: ./scripts/convert-films.sh, затем
- *   gh release upload films-v1 public/media/films/*.mp4 --clobber
+ * Поэтому файлы ужаты под лимит git (100 МиБ) и раздаются сайтом как video/mp4.
+ * См. scripts/convert-films.sh.
  */
-const RELEASE =
-  "https://github.com/JustBelieve9/balhash/releases/download/films-v1";
-
 export type Film = {
   id: string;
   title: string;
@@ -25,7 +24,7 @@ export const films: Film[] = [
     id: "tuda",
     title: "Туда",
     note: "Дорога на озеро и четыре дня на берегу.",
-    src: `${RELEASE}/tuda.mp4`,
+    src: "/media/films/tuda.mp4",
     poster: "/media/films/tuda.jpg",
     duration: 1057,
     downloadName: "balkhash-film-1-tuda.mp4",
@@ -34,7 +33,7 @@ export const films: Film[] = [
     id: "obratno",
     title: "Обратно",
     note: "Дождь на трассе, Караганда, Астана.",
-    src: `${RELEASE}/obratno.mp4`,
+    src: "/media/films/obratno.mp4",
     poster: "/media/films/obratno.jpg",
     duration: 775,
     downloadName: "balkhash-film-2-obratno.mp4",

@@ -8,7 +8,6 @@ export const site = {
     { label: "Фильм", href: "#film" },
     { label: "Озеро", href: "#lake" },
     { label: "Астана", href: "#astana" },
-    { label: "Хроника", href: "#chronicle" },
     { label: "Архив", href: "#archive" },
     { label: "Скачать", href: "#download" },
   ],

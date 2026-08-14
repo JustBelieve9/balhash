@@ -42,7 +42,14 @@ export function SeriesOverlay({
       role="dialog"
       aria-modal="true"
       aria-label={label.title}
-      className="fixed inset-0 z-40 overflow-y-auto bg-background/97 backdrop-blur-sm"
+      // Закрывается кликом куда угодно. Ссылки и кнопки внутри исключены,
+      // иначе скачивание закрывало бы серию прямо под рукой.
+      onClick={(event) => {
+        const target = event.target as HTMLElement;
+        if (target.closest("a, button")) return;
+        onClose();
+      }}
+      className="fixed inset-0 z-40 cursor-zoom-out overflow-y-auto bg-background/97 backdrop-blur-sm"
       initial={reduce ? false : { opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.35, ease: "linear" }}
