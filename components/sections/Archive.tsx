@@ -1,5 +1,5 @@
 import type { Series } from "@/content/media.generated";
-import { films } from "@/content/films";
+import { films, filmDuration } from "@/content/films";
 import { formatDayMonth, formatFrames, formatDuration } from "@/lib/format";
 import { seriesTitle } from "@/lib/series";
 
@@ -46,7 +46,7 @@ export function Archive({ series }: { series: Series[] }) {
             <span className="md:col-span-4">Фильм</span>
             <span className="text-foreground md:col-span-5">{film.title}</span>
             <span className="tabular md:col-span-3">
-              {formatDuration(film.duration)}
+              {formatDuration(filmDuration(film))}
             </span>
           </li>
         ))}

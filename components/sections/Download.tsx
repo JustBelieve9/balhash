@@ -15,22 +15,29 @@ export function Download({ photoCount }: { photoCount: number }) {
       </h2>
       <div className="mt-8 max-w-[52ch] space-y-4 text-base leading-[1.8] text-muted">
         <p>{downloadNote}</p>
-        <p>
-          В архиве {formatFrames(photoCount)} и фильм двумя частями.
-        </p>
+        <p>В архиве {formatFrames(photoCount)} и фильм двумя частями.</p>
       </div>
-      <div className="mt-8 flex flex-col items-start gap-2">
+      <div className="mt-8">
         <DownloadLink href={allPhotosZip}>
           Скачать все фото одним архивом
         </DownloadLink>
+      </div>
+      <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
         {films.map((film) => (
-          <DownloadLink
-            key={film.id}
-            href={film.src}
-            name={film.downloadName}
-          >
-            {`Скачать фильм: ${film.title.toLowerCase()}`}
-          </DownloadLink>
+          <div key={film.id}>
+            <p className="label text-foreground">{film.title}</p>
+            <div className="mt-2 flex flex-col items-start gap-1">
+              {film.parts.map((part) => (
+                <DownloadLink
+                  key={part.part}
+                  href={part.src}
+                  name={part.downloadName}
+                >
+                  {`Часть ${part.part}`}
+                </DownloadLink>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
       <p className="mt-16 max-w-[52ch] border-t border-line pt-6 text-base leading-[1.8] text-muted">
