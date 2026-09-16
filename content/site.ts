@@ -9,5 +9,6 @@ export const site = {
     { label: "Озеро", href: "#lake" },
     { label: "Астана", href: "#astana" },
     { label: "Скачать", href: "#download" },
+    { label: "План поездки", href: "plan/" },
   ],
 };

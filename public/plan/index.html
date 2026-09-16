@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#12181C">
+<title>Балхаш 2026 — маршрут, снаряжение, книги</title>
+<meta name="description" content="Всё для поездки на озеро Балхаш: дорожный лист Екатеринбург → Балхаш, чек-лист снаряжения и ночлега, книжная подборка в дорогу.">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --ink:#1C2126;
+  --ink-soft:#4A4536;
+  --paper:#FAF7F0;
+  --paper-alt:#F1ECDE;
+  --card:#FFFFFF;
+  --line:#E2D9C4;
+  --hero:#12181C;
+  --hero-ink:#EDEAE1;
+  --hero-sub:#C7CFD3;
+  --teal:#0E6E73;
+  --teal-deep:#0A4D50;
+  --amber:#E2A230;
+  --amber-deep:#B97A16;
+  --amber-text:#8A5610;
+  --rust:#B33F2B;
+  --toll:#3C7A5C;
+  --dep:#C1512F;
+  --anx:#1D7F86;
+  --acc:#3F7A4E;
+  --comp:#A94B72;
+  --mean:#8A600C;
+  --mod:#6A5AA0;
+  --radius:10px;
+  --radius-sm:6px;
+  --maxw:1080px;
+  --focus:#0E6E73;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Georgia,'Noto Serif','Times New Roman',serif;
+  line-height:1.55;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.disp{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:0.02em;
+  font-weight:800;
+}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;}
+h1,h2,h3,h4{margin:0;}
+a{color:var(--teal-deep);}
+a:focus-visible,button:focus-visible,input:focus-visible,.tab:focus-visible{
+  outline:3px solid var(--focus);
+  outline-offset:2px;
+}
+img{max-width:100%; display:block;}
+button{font:inherit;}
+
+/* ============ SKIP LINK ============ */
+.skip-link{
+  position:absolute; left:-999px; top:auto;
+  background:var(--teal); color:#fff; padding:10px 16px; border-radius:var(--radius-sm);
+  z-index:200;
+}
+.skip-link:focus{left:12px; top:12px;}
+
+/* ============ TOP BAR / TABS ============ */
+.topbar{
+  position:sticky; top:0; z-index:100;
+  background:var(--hero);
+  border-bottom:3px solid var(--amber);
+}
+.topbar-inner{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:10px 4vw;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:nowrap;
+}
+@media (max-width:420px){
+  .topbar-inner{gap:8px;}
+  .brand{font-size:12px;}
+  .tab{padding:9px 12px; font-size:12.5px;}
+}
+.brand{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+  font-size:14px;
+  color:var(--hero-ink);
+  white-space:nowrap;
+  flex:none;
+}
+.brand b{color:var(--amber);}
+.tabs{
+  display:flex;
+  gap:6px;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  flex:1 1 auto;
+  min-width:0;
+}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{
+  flex:none;
+  background:transparent;
+  border:2px solid transparent;
+  color:var(--hero-sub);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  font-weight:700;
+  font-size:13.5px;
+  text-transform:uppercase;
+  letter-spacing:0.03em;
+  padding:10px 16px;
+  min-height:44px;
+  border-radius:999px;
+  cursor:pointer;
+  transition:background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  white-space:nowrap;
+}
+.tab:hover{color:#fff;}
+.tab.active{
+  background:var(--amber);
+  color:var(--hero);
+  border-color:var(--amber);
+}
+
+/* ============ TABPANELS ============ */
+.tabpanel{display:none;}
+.tabpanel.active{display:block;}
+
+/* ============ HERO (shared shape, per-tab colors) ============ */
+.hero{
+  background:var(--hero);
+  color:var(--hero-ink);
+  padding:44px 6vw 40px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";
+  position:absolute; left:0; right:0; bottom:0; height:8px;
+  background:repeating-linear-gradient(90deg, var(--amber) 0 30px, transparent 30px 52px);
+  opacity:0.9;
+}
+.hero-inner{max-width:var(--maxw); margin:0 auto; position:relative;}
+.eyebrow{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:12px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--amber);
+  margin:0 0 12px;
+}
+h1.title{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:0.01em;
+  font-weight:800;
+  font-size:clamp(28px,6vw,52px);
+  line-height:1.04;
+  max-width:820px;
+}
+h1.title em{font-style:normal; color:var(--amber);}
+.hero-sub{
+  margin:16px 0 0;
+  max-width:620px;
+  color:var(--hero-sub);
+  font-size:15.5px;
+  line-height:1.6;
+}
+.hero-sub a{color:var(--amber);}
+.hero-sub a:hover{color:#fff;}
+a:hover{color:var(--teal);}
+.stat-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:22px;
+  margin-top:28px;
+}
+.stat{border-left:3px solid var(--amber); padding-left:12px;}
+.stat .num{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:22px;
+  font-weight:600;
+  color:#fff;
+  display:block;
+  line-height:1.2;
+}
+.stat .lbl{
+  font-size:11.5px;
+  color:#9AA7AD;
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+}
+
+/* ============ SECTIONS ============ */
+section.block{padding:44px 6vw; border-bottom:1px solid var(--line); max-width:var(--maxw); margin:0 auto;}
+section.block.alt{background:var(--paper-alt); max-width:none;}
+section.block.alt > *{max-width:var(--maxw); margin-left:auto; margin-right:auto;}
+.section-head{display:flex; align-items:baseline; gap:14px; margin-bottom:8px; flex-wrap:wrap;}
+.section-num{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:13px;
+  color:var(--amber-text);
+  border:1.5px solid var(--amber-deep);
+  padding:2px 8px;
+  border-radius:var(--radius-sm);
+}
+.section-head h2{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:0.01em;
+  font-weight:800;
+  font-size:clamp(21px,3vw,28px);
+  color:var(--teal-deep);
+}
+.section-lede{color:var(--ink-soft); max-width:640px; margin:10px 0 26px; font-size:15px;}
+
+/* ============ ROUTE TIMELINE (safe, no overlap by design) ============ */
+.route-timeline{list-style:none; margin:0; padding:0; max-width:720px;}
+.tl-item{
+  position:relative;
+  padding-left:38px;
+  padding-bottom:6px;
+}
+.tl-item .tl-dot{
+  position:absolute; left:0; top:2px;
+  width:20px; height:20px;
+  border-radius:50%;
+  background:var(--paper);
+  border:3px solid var(--teal);
+  z-index:2;
+}
+.tl-item.overnight .tl-dot{background:var(--amber); border-color:var(--amber-deep);}
+.tl-item .tl-line{
+  position:absolute; left:9px; top:22px; bottom:-6px;
+  width:3px;
+  border-radius:2px;
+}
+.tl-item .tl-line.toll{background:var(--toll);}
+.tl-item .tl-line.free{background:var(--line);}
+.tl-item:last-child .tl-line{display:none;}
+.tl-body{
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 10px;
+  padding-bottom:20px;
+}
+.tl-body .name{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  font-weight:800;
+  text-transform:uppercase;
+  font-size:16px;
+  color:var(--ink);
+}
+.tl-body .km{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:13px;
+  color:var(--teal-deep);
+  font-weight:600;
+}
+.tl-segnote{
+  font-size:12.5px;
+  color:var(--ink-soft);
+  margin:-14px 0 18px 38px;
+  padding-bottom:16px;
+}
+
+.tag{
+  display:inline-block;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:10.5px;
+  text-transform:uppercase;
+  padding:2px 8px;
+  border-radius:999px;
+  vertical-align:middle;
+  font-weight:600;
+}
+.tag.must{background:var(--rust); color:#fff;}
+.tag.sleep{background:var(--amber); color:var(--hero);}
+.tag.toll{background:var(--toll); color:#fff;}
+
+.legend{display:flex; gap:20px; flex-wrap:wrap; font-size:13px; color:var(--ink-soft); margin-top:6px 0 30px;}
+.legend-item{display:flex; align-items:center; gap:8px;}
+.legend-swatch{width:14px; height:14px; border-radius:3px; flex:none;}
+
+/* ============ DAYCARDS / TABLES ============ */
+.daycard{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); margin-bottom:24px; overflow:hidden;}
+.daycard-head{
+  background:var(--teal);
+  color:#fff;
+  padding:13px 18px;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  font-weight:700;
+  letter-spacing:0.02em;
+  font-size:16px;
+  text-transform:uppercase;
+}
+.tbl-wrap{overflow-x:auto; -webkit-overflow-scrolling:touch;}
+table{width:100%; border-collapse:collapse; font-size:14.5px; min-width:520px;}
+th{
+  text-align:left;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  color:var(--ink-soft);
+  padding:10px 18px;
+  border-bottom:1px solid var(--line);
+}
+td{padding:13px 18px; border-bottom:1px solid var(--line); vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+td.km{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; white-space:nowrap; color:var(--teal-deep); font-weight:600;}
+td.point{font-weight:700;}
+
+.callout{border-left:4px solid var(--amber-deep); background:var(--paper-alt); padding:18px 22px; border-radius:var(--radius-sm); margin-top:18px;}
+section.block.alt .callout{background:#fff;}
+.callout h3{font-size:15.5px; color:var(--amber-text); margin:0 0 8px; font-weight:700;}
+.callout p{margin:0 0 8px; font-size:15px;}
+.callout p:last-child{margin-bottom:0;}
+.callout.rust{border-left-color:var(--rust);}
+.callout.rust h3{color:var(--rust);}
+.callout.toll{border-left-color:var(--toll);}
+.callout.toll h3{color:var(--toll);}
+
+.grid-2{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+@media (max-width:720px){ .grid-2{grid-template-columns:1fr;} }
+
+.checklist-card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:20px 22px;}
+.checklist-card h3{
+  font-size:16.5px; font-weight:700; color:var(--teal-deep);
+  margin:0 0 12px; padding-bottom:10px; border-bottom:2px solid var(--teal);
+  font-family:Georgia,'Noto Serif',serif;
+}
+ul.checks{list-style:none; margin:0; padding:0;}
+ul.checks li{display:flex; gap:10px; align-items:flex-start; padding:7px 0; font-size:14.5px;}
+ul.checks input[type=checkbox]{
+  appearance:none;-webkit-appearance:none;
+  width:20px; height:20px;
+  border:2px solid var(--teal);
+  border-radius:5px;
+  margin-top:1px;
+  flex:none;
+  cursor:pointer;
+  position:relative;
+}
+ul.checks input[type=checkbox]:checked{background:var(--teal);}
+ul.checks input[type=checkbox]:checked::after{
+  content:""; position:absolute; left:5px; top:1px;
+  width:5px; height:10px;
+  border:solid white; border-width:0 2px 2px 0;
+  transform:rotate(45deg);
+}
+.note{color:var(--ink-soft); font-size:13.5px; margin-top:8px;}
+
+.infocards{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:16px; margin-top:6px;}
+.infocard{background:var(--card); border:1px solid var(--line); border-left:4px solid var(--teal); padding:16px 18px; border-radius:var(--radius-sm);}
+.infocard.warn{border-left-color:var(--rust);}
+.infocard h4{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  font-size:15px; text-transform:uppercase; letter-spacing:0.02em; margin:0 0 8px; color:var(--ink); font-weight:800;
+}
+.infocard p{margin:0; font-size:14px; color:var(--ink-soft);}
+.fig{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-weight:600; color:var(--teal-deep);}
+
+footer.site-footer{padding:30px 6vw 46px; text-align:center; color:var(--ink-soft); font-size:12.5px; max-width:var(--maxw); margin:0 auto;}
+
+/* ============ GEAR TAB SPECIFIC ============ */
+.pill-row{display:flex; flex-wrap:wrap; gap:12px; margin-top:26px;}
+.context-pill{
+  background:var(--card); border:1px solid var(--line); border-radius:40px;
+  padding:10px 18px; font-size:13.5px; display:flex; gap:8px; align-items:baseline;
+  box-shadow:0 4px 12px rgba(18,24,28,0.06);
+  color:var(--ink-soft);
+}
+.context-pill b{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; color:var(--teal-deep); font-size:14px;}
+
+.grid-cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:18px;}
+
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:8px;}
+@media (max-width:640px){ .compare{grid-template-columns:1fr;} }
+.compare .col{background:var(--card); border-radius:var(--radius); padding:22px; border-top:5px solid var(--amber);}
+.compare .col.car{border-top-color:var(--teal);}
+.compare .col h3{font-size:18px; margin:0 0 10px;}
+.compare .col p{font-size:14.5px; color:var(--ink-soft); margin:0;}
+
+.guide-card{background:var(--card); border:1px solid var(--line); border-left:5px solid var(--teal); border-radius:var(--radius); padding:20px 24px; margin-bottom:16px;}
+.guide-card h4{font-family:Georgia,'Noto Serif',serif; font-size:17px; color:var(--teal-deep); margin:0 0 8px; font-weight:700;}
+.guide-card p{margin:0 0 8px; font-size:14.5px;}
+.guide-card p:last-child{margin-bottom:0;}
+
+/* ============ BOOKS TAB SPECIFIC ============ */
+.books-tools{margin-top:26px;}
+.filters{display:flex; flex-wrap:wrap; gap:8px;}
+.pill{
+  font-weight:800; font-size:13px; padding:9px 16px; min-height:40px;
+  border-radius:999px; border:2px solid transparent; cursor:pointer;
+  background:var(--card); color:var(--ink);
+  box-shadow:0 2px 8px rgba(18,24,28,0.08);
+  transition:transform 0.15s ease;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+.pill:hover{transform:translateY(-1px);}
+.pill.active{color:#fff; border-color:transparent;}
+.roll-btn{
+  display:inline-flex; align-items:center; gap:8px;
+  margin:14px 0 0;
+  font-weight:700; font-size:14px; color:#fff;
+  background:var(--teal-deep);
+  border:none; padding:11px 22px; min-height:44px;
+  border-radius:999px; cursor:pointer;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+.roll-btn:hover{background:var(--teal);}
+
+.shelf{margin-top:38px;}
+.shelf-title{display:flex; align-items:center; gap:10px; font-weight:800; font-size:17px; margin-bottom:14px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; text-transform:uppercase; letter-spacing:0.02em;}
+.shelf-dot{width:11px; height:11px; border-radius:50%; flex:none;}
+
+.book-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:18px;}
+.book-card{
+  position:relative; background:var(--card); border:1px solid var(--line);
+  border-radius:14px; padding:20px 18px 18px;
+  box-shadow:0 6px 18px rgba(18,24,28,0.06);
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+.book-card:hover{transform:translateY(-4px); box-shadow:0 12px 24px rgba(18,24,28,0.1);}
+.book-card.hidden{display:none;}
+.book-card.pulse{animation:pulseGlow 1.3s ease;}
+@keyframes pulseGlow{
+  0%{box-shadow:0 6px 18px rgba(18,24,28,0.06);}
+  30%{box-shadow:0 0 0 6px var(--glow,rgba(14,110,115,0.3));}
+  100%{box-shadow:0 6px 18px rgba(18,24,28,0.06);}
+}
+.book-top{display:flex; gap:14px;}
+.cover{flex:0 0 70px; width:70px; height:104px; border-radius:8px; overflow:hidden; position:relative; box-shadow:0 3px 8px rgba(0,0,0,0.15); border:3px solid #fff;}
+.cover-placeholder{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:5px; text-align:center; background:linear-gradient(160deg, var(--spine,var(--teal)), rgba(0,0,0,0.28));}
+.cover-placeholder span{font-weight:700; font-size:9.5px; line-height:1.25; color:rgba(255,255,255,0.95); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;}
+.cover-img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity 0.35s ease;}
+.cover-img.loaded{opacity:1;}
+.book-meta{flex:1; min-width:0;}
+.title-ru{font-weight:700; font-size:15.5px; line-height:1.3; margin:0 0 4px; font-family:Georgia,'Noto Serif',serif;}
+.title-orig{font-size:11.5px; color:var(--ink-soft); margin:0 0 6px;}
+.byline{font-size:12.5px; color:var(--ink-soft); margin:0;}
+.byline b{color:var(--ink); font-weight:800;}
+.desc{font-size:13.5px; line-height:1.55; margin:14px 0 10px;}
+.alt-block{font-size:12px; color:var(--ink-soft); line-height:1.5; padding-top:10px; border-top:1px dashed var(--line);}
+.alt-block b{color:var(--ink);}
+.alt-block.note{font-style:italic;}
+
+/* ============ UTILITIES ============ */
+.visually-hidden{
+  position:absolute !important; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+@media (max-width:480px){
+  section.block{padding:34px 5vw;}
+  .hero{padding:36px 5vw 34px;}
+  .book-card{padding:16px 14px 14px;}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Перейти к содержанию</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <span class="brand"><b>Балхаш</b> · 2026</span>
+    <nav class="tabs" role="tablist" aria-label="Разделы сайта">
+      <button class="tab active" id="tabbtn-route" data-tab="route" role="tab" aria-selected="true" aria-controls="tab-route">Маршрут</button>
+      <button class="tab" id="tabbtn-gear" data-tab="gear" role="tab" aria-selected="false" aria-controls="tab-gear">Снаряжение</button>
+      <button class="tab" id="tabbtn-books" data-tab="books" role="tab" aria-selected="false" aria-controls="tab-books">Книги</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ======================================================= -->
+<!-- TAB 1 — МАРШРУТ                                          -->
+<!-- ======================================================= -->
+<section class="tabpanel active" id="tab-route" role="tabpanel" aria-labelledby="tabbtn-route">
+
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Дорожный лист · маршрут 1</p>
+      <h1 class="title">Екатеринбург <em>→</em> Балхаш</h1>
+      <p class="hero-sub">VW <a href="https://justbelieve9.github.io/golfik_map/" target="_blank" rel="noopener noreferrer">Golf 7.5</a>, 1.4 TSI (CZCA) · через Курган — Петропавловск — Кокшетау — Щучинск — Астану — Темиртау — Караганду. Платка начинается уже от Кокшетау, а не от Астаны.</p>
+      <div class="stat-row">
+        <div class="stat"><span class="num">1735</span><span class="lbl">км в одну сторону</span></div>
+        <div class="stat"><span class="num">7–8</span><span class="lbl">л/100км расход</span></div>
+        <div class="stat"><span class="num">50</span><span class="lbl">л бак</span></div>
+        <div class="stat"><span class="num">2</span><span class="lbl">дня в пути</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="section-head"><span class="section-num">01</span><h2>Маршрут по километражу</h2></div>
+    <p class="section-lede">Тёмная линия — обычная трасса, зелёная — платные участки. Платка начинается сразу за Кокшетау и почти без перерыва тянется до Балхаша.</p>
+
+    <ol class="route-timeline">
+      <li class="tl-item">
+        <span class="tl-dot"></span><span class="tl-line free"></span>
+        <div class="tl-body"><span class="name">Екатеринбург</span><span class="km">0 км</span></div>
+      </li>
+      <li class="tl-item">
+        <span class="tl-dot"></span><span class="tl-line free"></span>
+        <div class="tl-body"><span class="name">Курган</span><span class="km">370 км</span><span class="tag must">залить бак</span></div>
+      </li>
+      <li class="tl-item">
+        <span class="tl-dot"></span><span class="tl-line free"></span>
+        <div class="tl-body"><span class="name">Граница РФ / КЗ</span><span class="km">470 км</span></div>
+      </li>
+      <li class="tl-item">
+        <span class="tl-dot"></span><span class="tl-line free"></span>
+        <div class="tl-body"><span class="name">Петропавловск</span><span class="km">640 км</span></div>
+      </li>
+      <li class="tl-item">
+        <span class="tl-dot"></span><span class="tl-line toll"></span>
+        <div class="tl-body"><span class="name">Кокшетау</span><span class="km">830 км</span><span class="tag toll">платка начинается</span></div>
+      </li>
+      <li class="tl-item overnight">
+        <span class="tl-dot"></span><span class="tl-line toll"></span>
+        <div class="tl-body"><span class="name">Астана</span><span class="km">1140 км</span><span class="tag sleep">ночёвка</span></div>
+      </li>
+      <li class="tl-item">
+        <span class="tl-dot"></span><span class="tl-line free"></span>
+        <div class="tl-body"><span class="name">Темиртау</span><span class="km">~1274 км</span></div>
+        <p class="tl-segnote mono">↳ Астана → Темиртау: 134 км, платно</p>
+      </li>
+      <li class="tl-item">
+        <span class="tl-dot"></span><span class="tl-line toll"></span>
+        <div class="tl-body"><span class="name">Караганда</span><span class="km">1355 км</span><span class="tag must">залить бак</span></div>
+      </li>
+      <li class="tl-item">
+        <span class="tl-dot"></span>
+        <div class="tl-body"><span class="name">Балхаш</span><span class="km">1735 км</span></div>
+      </li>
+    </ol>
+
+    <div class="legend">
+      <div class="legend-item"><span class="legend-swatch" style="background:var(--line);"></span>Бесплатная трасса</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:var(--toll);"></span>Платный участок</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:var(--amber); border-radius:50%;"></span>Ночёвка</div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="section-head"><span class="section-num">02</span><h2>Маршрут по дням</h2></div>
+
+    <div class="daycard">
+      <div class="daycard-head">День 1 · Екатеринбург → Астана · ~1140 км</div>
+      <div class="tbl-wrap">
+      <table>
+        <tr><th>Км</th><th>Точка</th><th>Что делать</th></tr>
+        <tr><td class="km">0</td><td class="point">Екатеринбург</td><td>Старт с полным баком (50 л)</td></tr>
+        <tr><td class="km">~100</td><td class="point">Каменск-Уральский</td><td>Транзит, заправляться не нужно</td></tr>
+        <tr><td class="km">~370</td><td class="point">Курган <span class="tag must">залить бак</span></td><td>Последняя гарантированно надёжная АЗС в РФ перед границей. К этому моменту израсходовано ~28–30 л — долить до полного</td></tr>
+        <tr><td class="km">~470</td><td class="point">Граница РФ/КЗ</td><td>Район Петухово (Курганская обл.) / СКО — см. юридический раздел</td></tr>
+        <tr><td class="km">~640</td><td class="point">Петропавловск</td><td>Первая крупная точка в Казахстане — «Гелиос», «КазМунайГаз». Не обязательно, если полный бак с Кургана</td></tr>
+        <tr><td class="km">~830</td><td class="point">Кокшетау <span class="tag toll">платка начинается тут</span></td><td>Дальше почти без перерыва платно до самой Астаны — см. блок про платку ниже</td></tr>
+        <tr><td class="km">~1140</td><td class="point">Астана <span class="tag sleep">ночёвка</span></td><td>Перед выездом утром — залить полный бак: дальше снова платка и степной перегон</td></tr>
+      </table>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h3>Почему Астана</h3>
+      <p>Покрывает 66% маршрута, при этом развитая инфраструктура — отели, круглосуточные заправки, кафе. Если 1140 км за день многовато (13–14 часов с границей и остановками) — запасной вариант заночевать раньше, в Петропавловске (~640 км) или Кокшетау (~830 км), разбив маршрут на 3 дня.</p>
+    </div>
+
+    <div class="daycard" style="margin-top:24px;">
+      <div class="daycard-head">День 2 · Астана → Балхаш · ~595 км</div>
+      <div class="tbl-wrap">
+      <table>
+        <tr><th>Км</th><th>Точка</th><th>Что делать</th></tr>
+        <tr><td class="km">1140–1274</td><td class="point">Астана — Темиртау <span class="tag toll">платно</span></td><td>134 км, категория I-A, до 140 км/ч. Легковая: <span class="fig">680 ₸</span> предоплата / <span class="fig">800 ₸</span> постоплата</td></tr>
+        <tr><td class="km">~1355</td><td class="point">Караганда <span class="tag must">залить бак</span></td><td>Обязательно полный бак под пробку — дальше ~380 км степи почти без нормальных заправок</td></tr>
+        <tr><td class="km">1355–1735</td><td class="point">Караганда — Балхаш <span class="tag toll">платно</span></td><td>Часть трассы KAZ01 (645 км до Бурылбайтала, вам — ~380 км до Балхаша). До 140 км/ч. Легковая: <span class="fig">2028 ₸</span> предоплата / <span class="fig">2341 ₸</span> постоплата (цена указана за весь участок до Бурылбайтала — до самого Балхаша может выйти дешевле)</td></tr>
+        <tr><td class="km">1735</td><td class="point">Балхаш</td><td>Финиш. АЗС в городе есть, но по отзывам путешественников «подозрительные» — лучше приехать с запасом топлива</td></tr>
+      </table>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h3>Про канистру</h3>
+      <p>Строго по запасу хода не нужна — полный бак даёт 500–600+ км, а самый длинный безазсовый перегон (Караганда–Балхаш) около 380 км. Но канистра литров на 10–15 — разумная страховка: участок безлюдный, при объезде из-за ремонта или пробки расход непредсказуем, а топливо на мелких несетевых АЗС в глубинке — под вопросом.</p>
+    </div>
+
+    <div class="callout toll">
+      <h3>Где именно начинается платка — важное уточнение</h3>
+      <p>Платная дорога начинается не от Астаны, а <b>от Кокшетау</b>. Фактически это два смежных платных участка: <b>Кокшетау — Щучинск</b> (61 км, 110 ₸ предоплата / 130 ₸ постоплата) и <b>Щучинск — Астана</b> (211 км, 460 ₸ предоплата / 530 ₸ постоплата). Дальше — знакомая уже Астана–Темиртау (134 км) и Караганда–Балхаш. По сути от Кокшетау и почти до самого Балхаша вы почти всё время едете по платным или примыкающим к ним участкам, с парой коротких бесплатных разрывов у самих городов.</p>
+      <p>Итоговая стоимость платки на весь путь в одну сторону — примерно <b>3300–3800 ₸</b> (≈530–610 ₽), туда-обратно — <b>1050–1200 ₽</b>. Это заметно больше, чем если считать только последний участок, но всё равно копейки на фоне бензина.</p>
+    </div>
+  </section>
+
+  <section class="block alt">
+    <div class="section-head"><span class="section-num">03</span><h2>Где заправляться, если хочется АИ-100</h2></div>
+    <div class="callout rust">
+      <h3>Главное: в Казахстане АИ-100 не производят вообще</h3>
+      <p>По официальным данным на 2025–2026 год, казахстанские НПЗ АИ-100 не выпускают — идут только разговоры о запуске производства в перспективе. Потолок по октановому числу в стране — <b>АИ-98</b>, и продаётся он далеко не на каждой заправке, а точечно у премиальных сетей.</p>
+    </div>
+    <div class="infocards">
+      <div class="infocard">
+        <h4>Пока в России</h4>
+        <p>АИ-100 имеет смысл заливать в последний раз перед границей — на крупных сетевых АЗС в Екатеринбурге или Кургане (Лукойл, Газпромнефть). После Кургана варианта с сотней уже не будет.</p>
+      </div>
+      <div class="infocard">
+        <h4>В Казахстане — потолок АИ-98</h4>
+        <p>Максимум, что найдёте — АИ-98 у сетей <b>Qazaq Oil</b> (премиальная линейка «Tulpar», сделана по технологии Total Energies), <b>Helios</b> (линейка Prime) и <b>Royal Petrol</b>. Это лучшее, на что можно рассчитывать по всему маршруту от границы до Балхаша.</p>
+      </div>
+      <div class="infocard">
+        <h4>По пути следования</h4>
+        <p>АИ-98/Prime реально найти в Петропавловске, Кокшетау, Астане, Караганде — на заправках Qazaq Oil, Helios, Sinooil у крупных городов и вдоль платных участков. В степной глубинке (особенно после Караганды) рассчитывайте максимум на АИ-92/95.</p>
+      </div>
+      <div class="infocard">
+        <h4>Стоит ли переплачивать</h4>
+        <p>Для 1.4 TSI (CZCA) заводом рекомендован АИ-95, АИ-98 даст едва заметную разницу в отклике, а моющие присадки в «Prime»-линейках — плюс для длительной поездки. Гнаться за АИ-100 смысла нет — его просто негде взять после Кургана, а разница для этого мотора не оправдывает поиски.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="section-head"><span class="section-num">04</span><h2>Юридический чек-лист</h2></div>
+
+    <div class="grid-2">
+      <div class="checklist-card">
+        <h3>Документы на себя и авто</h3>
+        <ul class="checks">
+          <li><input type="checkbox" id="doc1"><label for="doc1">Российский внутренний паспорт — виза не нужна, загранпаспорт не обязателен, но не помешает</label></li>
+          <li><input type="checkbox" id="doc2"><label for="doc2">Российское водительское удостоверение — международное не требуется</label></li>
+          <li><input type="checkbox" id="doc3"><label for="doc3">СТС, оригинал</label></li>
+          <li><input type="checkbox" id="doc4"><label for="doc4">ПТС — не всегда спрашивают, но лучше иметь</label></li>
+          <li><input type="checkbox" id="doc5"><label for="doc5">Диагностическая карта — на границе не спрашивают, но местная ГАИ вдали от неё может. Для авто старше 4–7 лет формально обязательна (Golf 2019 г. — как раз погранично)</label></li>
+          <li><input type="checkbox" id="doc6"><label for="doc6">Доверенность, если машина не на вас</label></li>
+        </ul>
+      </div>
+
+      <div class="checklist-card">
+        <h3>Страховка</h3>
+        <ul class="checks">
+          <li><input type="checkbox" id="doc7"><label for="doc7">Полис <b>ОГПО ВТС</b> — казахстанский аналог ОСАГО для иностранного транспорта</label></li>
+        </ul>
+        <p class="note">Российский ОСАГО в Казахстане не действует. «Зелёная карта» тоже не спасает — Россия исключена из этой системы с 2023 года. Оформить можно заранее онлайн — kazpolis.ru или avtopolisonline.kz специализируются именно на въезжающих россиянах (WhatsApp/Telegram, 15–30 минут, PDF-полис) — или прямо на границе в будке (~2000–5000 ₽ на короткий срок).</p>
+        <p class="note">⚠ Проверяйте полис по номеру в Единой страховой базе данных Казахстана (ЕСБД) до поездки — на форумах регулярно жалуются на поддельные полисы.</p>
+      </div>
+
+      <div class="checklist-card">
+        <h3>На границе</h3>
+        <ul class="checks">
+          <li><input type="checkbox" id="doc8"><label for="doc8">Миграционная карта — сохранить до самого выезда обратно</label></li>
+          <li><input type="checkbox" id="doc9"><label for="doc9">Таможенная декларация на временный ввоз ТС — проверить, что выдали копию</label></li>
+        </ul>
+        <p class="note">Если планируете быть в Казахстане дольше ~30 дней — нужна миграционная регистрация (обычно её делает отель/хозяин жилья).</p>
+      </div>
+
+      <div class="checklist-card">
+        <h3>Обязательный набор в машине</h3>
+        <ul class="checks">
+          <li><input type="checkbox" id="doc10"><label for="doc10">Аптечка</label></li>
+          <li><input type="checkbox" id="doc11"><label for="doc11">Огнетушитель</label></li>
+          <li><input type="checkbox" id="doc12"><label for="doc12">Знак аварийной остановки</label></li>
+          <li><input type="checkbox" id="doc13"><label for="doc13">Светоотражающий жилет — держите в салоне, а не в багажнике</label></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:18px;">
+      <h3>Деньги — частый сюрприз</h3>
+      <p>Российские карты в Казахстане в 2026 году практически не работают: «Мир» — по факту только ВТБ Казахстан и в основном на снятие, Visa/Mastercard российских банков не принимаются вообще. Берите наличные — рубли и/или сразу немного тенге.</p>
+    </div>
+  </section>
+
+  <section class="block alt">
+    <div class="section-head"><span class="section-num">05</span><h2>Особенности Казахстана</h2></div>
+    <div class="infocards">
+      <div class="infocard">
+        <h4>Платные дороги</h4>
+        <p>Астана–Темиртау (134 км) и Караганда–Балхаш (расширен с июля 2026). Оплата безбарьерная, камеры на арках. Дешевле предоплата, иначе — онлайн в течение 7 дней через QazToll.</p>
+      </div>
+      <div class="infocard warn">
+        <h4>Алкоголь</h4>
+        <p>Нулевая терпимость — любое количество в крови нарушение. Первое нарушение: 15 суток ареста + лишение прав до 7 лет.</p>
+      </div>
+      <div class="infocard warn">
+        <h4>Штрафы за скорость</h4>
+        <p><span class="fig">10–20 км/ч</span> — 5 МРП (~21 600 ₸) · <span class="fig">20–40</span> — 10 МРП · <span class="fig">40–60</span> — 20 МРП · <span class="fig">60+</span> — 40 МРП (~173 000 ₸). Оплата за 7 дней — скидка 50%. С марта 2026 фиксируют и дроны.</p>
+      </div>
+      <div class="infocard">
+        <h4>Тонировка</h4>
+        <p>Не сюрприз: нормы почти как в РФ — передние боковые ≥70%, лобовое ≥75%. Если легально по ГОСТу дома, вопросов не будет.</p>
+      </div>
+      <div class="infocard">
+        <h4>Ходовые огни</h4>
+        <p>Ближний свет должен быть включён постоянно вне населённых пунктов, даже днём — как почти везде в СНГ.</p>
+      </div>
+      <div class="infocard">
+        <h4>Скот на трассе</h4>
+        <p>На степных участках (особенно Караганда–Балхаш) — стада верблюдов и лошадей у дороги или на ней. Осторожно на закате и в темноте.</p>
+      </div>
+      <div class="infocard">
+        <h4>Топливо в глубинке</h4>
+        <p>На сетевых АЗС (Гелиос, КМГ, Sinooil, QazaqOil) вопросов нет, на мелких независимых — риск. Заливайтесь под пробку в Кургане и Караганде.</p>
+      </div>
+      <div class="infocard">
+        <h4>Связь</h4>
+        <p>Роуминг обычно работает, но недёшево. На перегоне Караганда–Балхаш сеть местами пропадает — уточните тариф заранее.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">Екатеринбург → Балхаш · 1735 км · подготовлено для поездки на VW <a href="https://justbelieve9.github.io/golfik_map/" target="_blank" rel="noopener noreferrer">Golf 7.5</a></footer>
+</section>
+
+<!-- ======================================================= -->
+<!-- TAB 2 — СНАРЯЖЕНИЕ И НОЧЛЕГ                              -->
+<!-- ======================================================= -->
+<section class="tabpanel" id="tab-gear" role="tabpanel" aria-labelledby="tabbtn-gear">
+
+  <div class="hero" style="--hero:#12181C;">
+    <div class="hero-inner">
+      <p class="eyebrow">Снаряжение и ночлег</p>
+      <h1 class="title">Озеро Балхаш: <em>чек-лист выживания</em> у воды и в степи</h1>
+      <p class="hero-sub">Пустынный климат, привозная вода, сильный ветер и палатка против матраса в багажнике — разбираем, что взять с собой и как правильно ночевать.</p>
+      <div class="stat-row">
+        <div class="stat"><span class="num">+30°</span><span class="lbl">днём летом</span></div>
+        <div class="stat"><span class="num">23–28°</span><span class="lbl">вода у берега</span></div>
+        <div class="stat"><span class="num">запад</span><span class="lbl">пресная часть</span></div>
+        <div class="stat"><span class="num">восток</span><span class="lbl">солёная часть</span></div>
+      </div>
+      <div class="pill-row">
+        <div class="context-pill">💧 <b>3–4 л</b> воды на человека в день — местная почти везде привозная</div>
+        <div class="context-pill">🦟 Комары вечером в безветрие — днём и на ветру почти нет</div>
+        <div class="context-pill">🛍️ Магазины на зонах отдыха скудные — еду везите с собой</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="section-head"><h2>Снаряжение по категориям</h2></div>
+    <div class="grid-cards">
+
+      <div class="checklist-card">
+        <h3>Вода и еда</h3>
+        <ul class="checks">
+          <li><input type="checkbox" id="g1"><label for="g1">Питьевая вода: 3–4 л/чел/день + запас на 1–2 лишних дня. Лучше пара канистр по 20 л</label></li>
+          <li><input type="checkbox" id="g2"><label for="g2">Техническая вода отдельно от питьевой</label></li>
+          <li><input type="checkbox" id="g3"><label for="g3">Продукты на весь срок — на местные магазины не рассчитывайте</label></li>
+          <li><input type="checkbox" id="g4"><label for="g4">Плитка/горелка + газ или дрова/уголь</label></li>
+          <li><input type="checkbox" id="g5"><label for="g5">Посуда, которую не жалко — песок и ветер сделают своё</label></li>
+        </ul>
+      </div>
+
+      <div class="checklist-card">
+        <h3>Солнце и жара</h3>
+        <ul class="checks">
+          <li><input type="checkbox" id="g6"><label for="g6">Крем SPF 50, обновлять каждые 2–3 часа</label></li>
+          <li><input type="checkbox" id="g7"><label for="g7">Головной убор, солнцезащитные очки</label></li>
+          <li><input type="checkbox" id="g8"><label for="g8">Тент/навес от солнца отдельно от палатки</label></li>
+          <li><input type="checkbox" id="g9"><label for="g9">Лёгкая одежда с длинным рукавом на самые жаркие часы</label></li>
+          <li><input type="checkbox" id="g10"><label for="g10">Пантенол от солнечных ожогов</label></li>
+        </ul>
+      </div>
+
+      <div class="checklist-card">
+        <h3>От насекомых</h3>
+        <ul class="checks">
+          <li><input type="checkbox" id="g11"><label for="g11">Репелленты от комаров и мошки</label></li>
+          <li><input type="checkbox" id="g12"><label for="g12">Фумигатор/спираль для стоянки</label></li>
+          <li><input type="checkbox" id="g13"><label for="g13">Москитная сетка на палатку и отдельно на окна машины</label></li>
+          <li><input type="checkbox" id="g14"><label for="g14">Антигистаминный гель после укусов</label></li>
+        </ul>
+      </div>
+
+      <div class="checklist-card">
+        <h3>Стоянка и быт</h3>
+        <ul class="checks">
+          <li><input type="checkbox" id="g15"><label for="g15">Длинные колышки — грунт песчаный/рыхлый, обычные не держат в ветер</label></li>
+          <li><input type="checkbox" id="g16"><label for="g16">Доп. оттяжки, вход палатки — от преобладающего ветра</label></li>
+          <li><input type="checkbox" id="g17"><label for="g17">Складной стол и стулья</label></li>
+          <li><input type="checkbox" id="g18"><label for="g18">Фонари + запасные батарейки/powerbank</label></li>
+          <li><input type="checkbox" id="g19"><label for="g19">Мусорные пакеты — придётся везти обратно</label></li>
+          <li><input type="checkbox" id="g20"><label for="g20">Лопатка, бельевая верёвка</label></li>
+        </ul>
+      </div>
+
+      <div class="checklist-card">
+        <h3>Аптечка (сверх автомобильной)</h3>
+        <ul class="checks">
+          <li><input type="checkbox" id="g21"><label for="g21">Регидрон / солевые растворы</label></li>
+          <li><input type="checkbox" id="g22"><label for="g22">Обезболивающее, жаропонижающее</label></li>
+          <li><input type="checkbox" id="g23"><label for="g23">Средство от расстройства желудка</label></li>
+          <li><input type="checkbox" id="g24"><label for="g24">Пластыри, антисептик, бинт</label></li>
+          <li><input type="checkbox" id="g25"><label for="g25">Личные лекарства с запасом</label></li>
+        </ul>
+      </div>
+
+      <div class="checklist-card">
+        <h3>Разное</h3>
+        <ul class="checks">
+          <li><input type="checkbox" id="g26"><label for="g26">Офлайн-карты — связь на месте нестабильна</label></li>
+          <li><input type="checkbox" id="g27"><label for="g27">Наличные тенге мелкими купюрами</label></li>
+          <li><input type="checkbox" id="g28"><label for="g28">Рыболовные снасти, если интересно</label></li>
+          <li><input type="checkbox" id="g29"><label for="g29">Спасжилеты, если планируете заплывать далеко — ветер быстро поднимает волну</label></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="block alt">
+    <div class="section-head"><h2>Палатка или машина?</h2></div>
+    <p class="section-lede">У тебя есть оба варианта — имеет смысл использовать по ситуации, а не выбирать раз и навсегда.</p>
+
+    <div class="compare">
+      <div class="col tent">
+        <h3>🏕️ Палатка</h3>
+        <p>Лучше в тихую жаркую ночь — больше воздуха, свободнее, можно выйти и зайти, не потревожив вещи в машине.</p>
+      </div>
+      <div class="col car">
+        <h3>🚗 Машина</h3>
+        <p>Лучше при сильном ветре (частое дело на Балхаше), при внезапном дожде и просто как более безопасный и тёплый вариант на дикой стоянке.</p>
+      </div>
+    </div>
+
+    <h2 style="font-size:20px; margin:30px 0 16px; text-transform:uppercase; letter-spacing:0.01em; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-weight:800; color:var(--teal-deep);">Правила сна в машине — <a href="https://justbelieve9.github.io/golfik_map/" target="_blank" rel="noopener noreferrer" style="color:inherit;">Golf 7.5</a></h2>
+
+    <div class="guide-card">
+      <h4>Вентиляция — это главное</h4>
+      <p>Никогда не спи с закрытыми окнами при работающем двигателе — риск отравления угарным газом, особенно если выхлопная труба присыпана песком/травой или ветер сдувает выхлоп обратно к салону. Двигатель на ночь глушить всегда.</p>
+      <p>Держи одно-два окна приоткрытыми на 3–5 см всю ночь для циркуляции — иначе к утру духота и конденсат. На щель натяни кусок москитной сетки или готовый оконный чехол — иначе комары зайдут первыми же.</p>
+    </div>
+
+    <div class="guide-card">
+      <h4>Обустройство спального места</h4>
+      <p>Задние сиденья складываются, но идеально ровного пола не будет — остаётся ступенька между сложенными спинками и багажником. Матрас должен быть достаточно толстым/жёстким, чтобы её сгладить — проверь это дома, а не в первую ночь на месте.</p>
+      <p>Заранее продумай, куда денутся вещи из багажника на ночь — переднее сиденье или тент рядом с машиной.</p>
+      <p>Каркасные шторки на все стёкла — не только приватность, но и чтобы солнце не разбудило в 5:30 и не превратило салон в теплицу.</p>
+    </div>
+
+    <div class="guide-card">
+      <h4>Безопасность</h4>
+      <p>Двери держи закрытыми на ночь, даже если стоянка кажется безлюдной. Не парковаться вплотную к воде — при сильном ветре возможен резкий подъём уровня. Ровная площадка без уклона. Ключи и телефон — под рукой, не в багажнике.</p>
+    </div>
+
+    <div class="guide-card">
+      <h4>Температура</h4>
+      <p>Днём на солнце в машине жарко даже с шторками — паркуйся так, чтобы утреннее и дневное солнце не било прямо в стёкла подолгу. Ночью в степи холоднее, чем ожидаешь — лёгкого спальника может не хватить, возьми плед как дополнение.</p>
+    </div>
+
+    <div class="guide-card">
+      <h4>Конденсат</h4>
+      <p>Из-за перепада температур на стёклах утром будет конденсат — протирай сразу после пробуждения, чтобы не намокали шторки и вещи у стёкол.</p>
+    </div>
+
+    <div class="callout rust">
+      <h3>Главное правило</h3>
+      <p>Двигатель на ночь — всегда выключен, окно — всегда приоткрыто. Это единственное, из чего не стоит делать компромисс ради тепла или тишины.</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">Озеро Балхаш · пресная часть на западе, солёная на востоке · подготовлено для стоянки на VW <a href="https://justbelieve9.github.io/golfik_map/" target="_blank" rel="noopener noreferrer">Golf 7.5</a></footer>
+</section>
+
+<!-- ======================================================= -->
+<!-- TAB 3 — КНИГИ                                            -->
+<!-- ======================================================= -->
+<section class="tabpanel" id="tab-books" role="tabpanel" aria-labelledby="tabbtn-books">
+
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">📚 Личная подборка</p>
+      <h1 class="title">Книжная полка <em>в дорогу</em></h1>
+      <p class="hero-sub">Книги для чтения на озере — с годом первого издания и всеми известными русскими названиями. Жми на кнопки, чтобы отфильтровать по теме, или доверься случаю.</p>
+      <div class="stat-row">
+        <div class="stat"><span class="num">14</span><span class="lbl">книг</span></div>
+        <div class="stat"><span class="num">6</span><span class="lbl">тем</span></div>
+        <div class="stat"><span class="num">RU+EN</span><span class="lbl">названия</span></div>
+      </div>
+      <div class="books-tools">
+        <div class="filters" id="filters">
+          <button class="pill active" data-filter="all" style="background:var(--ink); color:#fff;">Все</button>
+          <button class="pill" data-filter="dep" style="color:var(--dep);">Депрессия</button>
+          <button class="pill" data-filter="anx" style="color:var(--anx);">Тревога</button>
+          <button class="pill" data-filter="acc" style="color:var(--acc);">Принятие</button>
+          <button class="pill" data-filter="comp" style="color:var(--comp);">Самосострадание</button>
+          <button class="pill" data-filter="mean" style="color:var(--mean);">Смысл</button>
+          <button class="pill" data-filter="mod" style="color:var(--mod);">Современное</button>
+        </div>
+        <button class="roll-btn" id="rollBtn">🎲 Выбрать книгу за меня</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="block">
+
+    <div class="shelf">
+      <div class="shelf-title"><span class="shelf-dot" style="background:var(--dep)"></span>Депрессия</div>
+      <div class="book-grid">
+
+        <div class="book-card" data-category="dep" style="--spine:var(--dep)" data-title="Feeling Good The New Mood Therapy" data-author="David Burns">
+          <div class="book-top">
+            <div class="cover"><div class="cover-placeholder"><span>Feeling Good</span></div><img class="cover-img" alt="" loading="lazy"></div>
+            <div class="book-meta">
+              <p class="title-ru">Терапия настроения</p>
+              <p class="title-orig">Feeling Good: The New Mood Therapy · 1980</p>
+              <p class="byline">Автор: <b>Дэвид Бернс</b></p>
+            </div>
+          </div>
+          <p class="desc">Книга, которая популяризировала когнитивно-поведенческую терапию Аарона Бека для широкой аудитории. Учит распознавать искажённые автоматические мысли и последовательно с ними работать — классика, с которой чаще всего начинают.</p>
+          <div class="alt-block"><b>Полное название на русском:</b> «Терапия настроения: Клинически доказанный способ победить депрессию без таблеток» (Альпина Паблишер). Есть отдельная, более новая книга того же автора — «Новая терапия тревоги, депрессии и настроения» (2020) — это не переиздание, а другая книга.</div>
+        </div>
+
+        <div class="book-card" data-category="dep" style="--spine:var(--dep)" data-title="Mind Over Mood" data-author="Greenberger Padesky">
+          <div class="book-top">
+            <div class="cover"><div class="cover-placeholder"><span>Mind Over Mood</span></div><img class="cover-img" alt="" loading="lazy"></div>
+            <div class="book-meta">
+              <p class="title-ru">Разум рулит настроением</p>
+              <p class="title-orig">Mind Over Mood · 1995 (2-е изд. 2015)</p>
+              <p class="byline">Авторы: <b>Деннис Гринбергер, Кристин Падески</b></p>
+            </div>
+          </div>
+          <p class="desc">Не столько книга для чтения, сколько рабочая тетрадь: бланки для записи мыслей, таблицы для отслеживания настроения, пошаговые упражнения. Часто дают именно её как практический инструмент между сессиями.</p>
+          <div class="alt-block"><b>На русском:</b> «Разум рулит настроением. Измени свои мысли, привычки, здоровье, жизнь» (Питер, 2-е издание). Не путать с книгой «Управление настроением» тех же авторов — это отдельное клиническое руководство для терапевтов, а не эта книга.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="shelf">
+      <div class="shelf-title"><span class="shelf-dot" style="background:var(--anx)"></span>Тревога</div>
+      <div class="book-grid">
+
+        <div class="book-card" data-category="anx" style="--spine:var(--anx)" data-title="The Worry Cure Leahy" data-author="Robert Leahy">
+          <div class="book-top">
+            <div class="cover"><div class="cover-placeholder"><span>The Worry Cure</span></div><img class="cover-img" alt="" loading="lazy"></div>
+            <div class="book-meta">
+              <p class="title-ru">Лекарство от нервов</p>
+              <p class="title-orig">The Worry Cure · 2005</p>
+              <p class="byline">Автор: <b>Роберт Лихи</b></p>
+            </div>
+          </div>
+          <p class="desc">Один из самых цитируемых специалистов по тревоге объясняет, зачем мозгу вообще нужно беспокойство, и даёт пошаговую систему, чтобы отличать полезное планирование от бесконечного «пережёвывания» одних и тех же сценариев.</p>
+          <div class="alt-block"><b>На русском:</b> «Лекарство от нервов. Как перестать волноваться и получить удовольствие от жизни» (Питер, 2018). Важно: это не то же самое, что «Свобода от тревоги» того же автора — это перевод другой его книги, Anxiety Free (2009).</div>
+        </div>
+
+        <div class="book-card" data-category="anx" style="--spine:var(--anx)" data-title="Anxiety and Worry Workbook" data-author="David Clark Aaron Beck">
+          <div class="book-top">
+            <div class="cover"><div class="cover-placeholder"><span>Anxiety &amp; Worry Workbook</span></div><img class="cover-img" alt="" loading="lazy"></div>
+            <div class="book-meta">
+              <p class="title-ru">Тревога и беспокойство (рабочая тетрадь)</p>
+              <p class="title-orig">The Anxiety and Worry Workbook · 2012</p>
+              <p class="byline">Авторы: <b>Дэвид Кларк, Аарон Бек</b></p>
+            </div>
+          </div>
+          <p class="desc">Формат рабочей тетради от одного из создателей современной КПТ. Подробно разбирает физические, поведенческие и мысленные компоненты тревоги отдельно друг от друга — удобно, когда симптомы смешанные.</p>
+          <div class="alt-block note">Официального перевода на русский не найдено — при желании можно читать в оригинале или поискать похожие рабочие тетради по КПТ на русском.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="shelf">
+      <div class="shelf-title"><span class="shelf-dot" style="background:var(--acc)"></span>Принятие (ACT)</div>
+      <div class="book-grid">
+
+        <div class="book-card" data-category="acc" style="--spine:var(--acc)" data-title="The Happiness Trap" data-author="Russ Harris">
+          <div class="book-top">
+            <div class="cover"><div class="cover-placeholder"><span>The Happiness Trap</span></div><img class="cover-img" alt="" loading="lazy"></div>
+            <div class="book-meta">
+              <p class="title-ru">Ловушка счастья</p>
+              <p class="title-orig">The Happiness Trap · 2007</p>
+              <p class="byline">Автор: <b>Расс Хэррис</b></p>
+            </div>
+          </div>
+          <p class="desc">Доступное введение в терапию принятия и ответственности (ACT). Идея не в том, чтобы победить тревогу и грусть, а в том, чтобы перестать с ними воевать и всё равно двигаться к тому, что важно. Много простых упражнений.</p>
+          <div class="alt-block"><b>Выходила под двумя названиями:</b> «Ловушка счастья. Перестаём переживать — начинаем жить» (первое издание) и «Ловушка счастья. Как перестать переживать и начать жить» (2-е издание, БОМБОРА, дополненное более чем на 50%).</div>
+        </div>
+
+        <div class="book-card" data-category="acc" style="--spine:var(--acc)" data-title="A Liberated Mind" data-author="Steven Hayes">
+          <div class="book-top">
+            <div class="cover"><div class="cover-placeholder"><span>A Liberated Mind</span></div><img class="cover-img" alt="" loading="lazy"></div>
+            <div class="book-meta">
+              <p class="title-ru">Освобождённый разум</p>
+              <p class="title-orig">A Liberated Mind · 2019</p>
+              <p class="byline">Автор: <b>Стивен Хайес</b></p>
+            </div>
+          </div>
+          <p class="desc">Более новая и подробная книга от самого создателя ACT-подхода — тот же метод, что у Хэрриса, но глубже и с более современными исследованиями психологической гибкости.</p>
+          <div class="alt-block"><b>На русском:</b> «Освобождённый разум. Как побороть внутреннего критика и повернуться к тому, что действительно важно» (БОМБОРА, 2021).</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="shelf">
+      <div class="shelf-title"><span class="shelf-dot" style="background:var(--comp)"></span>Самосострадание</div>
+      <div class="book-grid">
+
+        <div class="book-card" data-category="comp" style="--spine:var(--comp)" data-title="Self-Compassion Neff" data-author="Kristin Neff">
+          <div class="book-top">
+            <div class="cover"><div class="cover-placeholder"><span>Self-Compassion</span></div><img class="cover-img" alt="" loading="lazy"></div>
+            <div class="book-meta">
+              <p class="title-ru">Самосострадание</p>
+              <p class="title-orig">Self-Compassion · 2011</p>
+              <p class="byline">Автор: <b>Кристин Нефф</b></p>
+            </div>
+          </div>
+          <p class="desc">Автор термина «самосострадание» в психологии объясняет разницу между жалостью к себе и способностью относиться к себе по-человечески в трудные моменты. Особенно полезна при склонности себя ругать за симптомы.</p>
+          <div class="alt-block"><b>На русском:</b> «Самосострадание. О силе сочувствия и доброты к себе» (МИФ). Не путать с «Самосострадание. Шаг за шагом» — это другая, более поздняя рабочая тетрадь Нефф в соавторстве с Кристофером Гермером.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="shelf">
+      <div class="shelf-title"><span class="shelf-dot" style="background:var(--mean)"></span>Смысл и опора</div>
+      <div class="book-grid">
+
+        <div class="book-card" data-category="mean" style="--spine:var(--mean)" data-title="Man's Search for Meaning Frankl" data-author="Viktor Frankl">
+          <div class="book-top">
+            <div class="cover"><div class="cover-placeholder"><span>Man's Search for Meaning</span></div><img class="cover-img" alt="" loading="lazy"></div>
+            <div class="book-meta">
+              <p class="title-ru">Человек в поисках смысла</p>
+              <p class="title-orig">Man's Search for Meaning · 1946</p>
+              <p class="byline">Автор: <b>Виктор Франкл</b></p>
+            </div>
+          </div>
+          <p class="desc">Психиатр, прошедший через нацистские концлагеря, описывает свой опыт и излагает основы логотерапии: человек способен выдержать почти любое «как», если у него есть ясное «зачем». Не техники самопомощи, а смысловая опора.</p>
+          <div class="alt-block"><b>Выходила под разными названиями:</b> «Человек в поисках смысла» (самое распространённое) и более старый перевод — «Сказать жизни „Да!“: психолог в концлагере».</div>
+        </div>
+
+        <div class="book-card" data-category="mean" style="--spine:var(--mean)" data-title="The Middle Passage From Misery to Meaning in Midlife" data-author="James Hollis">
+          <div class="book-top">
+            <div class="cover"><div class="cover-placeholder"><span>The Middle Passage</span></div><img class="cover-img" alt="" loading="lazy"></div>
+            <div class="book-meta">
+              <p class="title-ru">Перевал в середине пути</p>
+              <p class="title-orig">The Middle Passage: From Misery to Meaning in Midlife · 1993</p>
+              <p class="byline">Автор: <b>Джеймс Холлис</b></p>
+            </div>
+          </div>
+          <p class="desc">Юнгианский аналитик разбирает кризис середины жизни не как поломку, а как необходимый переход: приглашение отказаться от чужих сценариев и договоров с собой из юности и найти собственный, более честный смысл во второй половине жизни.</p>
+          <div class="alt-block"><b>На русском:</b> «Перевал в середине пути. Как преодолеть кризис среднего возраста и найти новый смысл жизни» (2011).</div>
+        </div>
+
+        <div class="book-card" data-category="mean" style="--spine:var(--mean)" data-title="Staring at the Sun Overcoming the Terror of Death" data-author="Irvin Yalom">
+          <div class="book-top">
+            <div class="cover"><div class="cover-placeholder"><span>Staring at the Sun</span></div><img class="cover-img" alt="" loading="lazy"></div>
+            <div class="book-meta">
+              <p class="title-ru">Вглядываясь в солнце</p>
+              <p class="title-orig">Staring at the Sun: Overcoming the Terror of Death · 2008</p>
+              <p class="byline">Автор: <b>Ирвин Ялом</b></p>
+            </div>
+          </div>
+          <p class="desc">Один из основателей экзистенциальной терапии — о страхе смерти как скрытом источнике тревоги на фоне обычной жизни. Идея не в том, чтобы победить этот страх, а в том, чтобы, взглянув на него прямо, начать честнее выбирать, на что тратить оставшееся время и какие ценности на самом деле важны.</p>
+          <div class="alt-block"><b>На русском:</b> «Вглядываясь в солнце. Жизнь без страха смерти».</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="shelf">
+      <div class="shelf-title"><span class="shelf-dot" style="background:var(--mod)"></span>Современное и доказательное</div>
+      <div class="book-grid">
+
+        <div class="book-card" data-category="mod" style="--spine:var(--mod)" data-title="Retrain Your Brain Cognitive Behavioral Therapy" data-author="Seth Gillihan">
+          <div class="book-top">
+            <div class="cover"><div class="cover-placeholder"><span>Retrain Your Brain</span></div><img class="cover-img" alt="" loading="lazy"></div>
+            <div class="book-meta">
+              <p class="title-ru">Retrain Your Brain: CBT in 7 Weeks</p>
+              <p class="title-orig">Retrain Your Brain · 2016</p>
+              <p class="byline">Автор: <b>Сет Гиллихан</b></p>
+            </div>
+          </div>
+          <p class="desc">Структурированный 7-недельный курс КПТ от клинического психолога, с конкретными упражнениями сразу под тревогу и депрессию — то есть под смешанную картину, а не одно расстройство.</p>
+          <div class="alt-block note">Официального перевода на русский не найдено.</div>
+        </div>
+
+        <div class="book-card" data-category="mod" style="--spine:var(--mod)" data-title="The Upward Spiral" data-author="Alex Korb">
+          <div class="book-top">
+            <div class="cover"><div class="cover-placeholder"><span>The Upward Spiral</span></div><img class="cover-img" alt="" loading="lazy"></div>
+            <div class="book-meta">
+              <p class="title-ru">Восходящая спираль</p>
+              <p class="title-orig">The Upward Spiral · 2015</p>
+              <p class="byline">Автор: <b>Алекс Корб</b></p>
+            </div>
+          </div>
+          <p class="desc">Нейробиолог объясняет, что физически происходит в мозге при депрессии и тревоге, и почему небольшие конкретные действия — сон, свет, движение — реально меняют его работу. Не мотивация, а механизм.</p>
+          <div class="alt-block"><b>На русском:</b> «Восходящая спираль. Как нейрофизиология помогает справиться с негативом и депрессией — шаг за шагом» (МИФ, 2016).</div>
+        </div>
+
+        <div class="book-card" data-category="mod" style="--spine:var(--mod)" data-title="Overcoming Anxiety Kennerley" data-author="Helen Kennerley">
+          <div class="book-top">
+            <div class="cover"><div class="cover-placeholder"><span>Overcoming Anxiety</span></div><img class="cover-img" alt="" loading="lazy"></div>
+            <div class="book-meta">
+              <p class="title-ru">Overcoming Anxiety</p>
+              <p class="title-orig">серия «Overcoming» · под ред. Питера Купера</p>
+              <p class="byline">Автор: <b>Хелен Кеннерли</b></p>
+            </div>
+          </div>
+          <p class="desc">Часть признанной в британской клинической психологии серии self-help книг, каждая написана практикующим клиническим психологом под конкретное расстройство — без мотивационной риторики, по существу.</p>
+          <div class="alt-block note">Эта конкретная книга на русский официально не переводилась (у Кеннерли есть другие переведённые работы, но это другие книги).</div>
+        </div>
+
+        <div class="book-card" data-category="mod" style="--spine:var(--mod)" data-title="Burnout The Secret to Unlocking the Stress Cycle" data-author="Emily Nagoski Amelia Nagoski">
+          <div class="book-top">
+            <div class="cover"><div class="cover-placeholder"><span>Burnout</span></div><img class="cover-img" alt="" loading="lazy"></div>
+            <div class="book-meta">
+              <p class="title-ru">Выгорание</p>
+              <p class="title-orig">Burnout: The Secret to Unlocking the Stress Cycle · 2019</p>
+              <p class="byline">Авторы: <b>Эмили Нагоски, Амелия Нагоски</b></p>
+            </div>
+          </div>
+          <p class="desc">Объясняет разницу между стрессором (внешней причиной) и самим стрессом (физиологическим циклом в теле) — и почему устранение причины не завершает цикл автоматически. Отсюда практические способы «закрыть» стресс телом: движение, дыхание, объятия, смех — а не только выходные.</p>
+          <div class="alt-block"><b>На русском:</b> «Выгорание. Новый подход к избавлению от стресса» (МИФ, 2019).</div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="site-footer">
+    Обложки подгружаются автоматически из открытой библиотечной базы Open Library при первом открытии этой вкладки — если обложка не нашлась, карточка остаётся с цветной плашкой вместо неё.
+  </footer>
+</section>
+
+</main>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- TAB SWITCHING ---------- */
+  var tabButtons = document.querySelectorAll('.tab');
+  var panels = { route: document.getElementById('tab-route'), gear: document.getElementById('tab-gear'), books: document.getElementById('tab-books') };
+  var booksLoaded = false;
+
+  function activateTab(name, updateHash){
+    tabButtons.forEach(function(btn){
+      var active = btn.dataset.tab === name;
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    Object.keys(panels).forEach(function(key){
+      panels[key].classList.toggle('active', key === name);
+    });
+    if(updateHash !== false){
+      try{ history.replaceState(null, '', '#' + name); }catch(e){}
+    }
+    if(name === 'books' && !booksLoaded){
+      booksLoaded = true;
+      initBooks();
+    }
+  }
+
+  tabButtons.forEach(function(btn){
+    btn.addEventListener('click', function(){ activateTab(btn.dataset.tab); });
+  });
+
+  var initialTab = (location.hash || '').replace('#','');
+  if(panels[initialTab]){ activateTab(initialTab, false); }
+
+  /* ---------- CHECKLIST PERSISTENCE ---------- */
+  try{
+    var boxes = document.querySelectorAll('ul.checks input[type=checkbox]');
+    var STORAGE_KEY = 'balkhash-checklist-v1';
+    var saved = {};
+    try{ saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }catch(e){ saved = {}; }
+    boxes.forEach(function(box){
+      if(saved[box.id]) box.checked = true;
+      box.addEventListener('change', function(){
+        saved[box.id] = box.checked;
+        try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(saved)); }catch(e){}
+      });
+    });
+  }catch(e){ /* localStorage unavailable — checklists still work, just won't persist */ }
+
+  /* ---------- BOOKS TAB (lazy init on first view) ---------- */
+  function initBooks(){
+    var cards = document.querySelectorAll('.book-card');
+    var pills = document.querySelectorAll('#filters .pill');
+    var shelves = document.querySelectorAll('#tab-books .shelf');
+    var rollBtn = document.getElementById('rollBtn');
+
+    /* filtering */
+    pills.forEach(function(pill){
+      pill.addEventListener('click', function(){
+        pills.forEach(function(p){
+          p.classList.remove('active');
+          p.style.background = '';
+          p.style.color = p.dataset.filter === 'all' ? 'var(--ink)' : getComputedStyle(document.documentElement).getPropertyValue('--' + p.dataset.filter) || '';
+        });
+        pill.classList.add('active');
+        var f = pill.dataset.filter;
+        pill.style.background = f === 'all' ? 'var(--ink)' : ('var(--' + f + ')');
+        pill.style.color = '#fff';
+
+        cards.forEach(function(card){
+          card.classList.toggle('hidden', f !== 'all' && card.dataset.category !== f);
+        });
+        shelves.forEach(function(shelf){
+          var visible = Array.prototype.some.call(shelf.querySelectorAll('.book-card'), function(c){ return !c.classList.contains('hidden'); });
+          shelf.style.display = visible ? '' : 'none';
+        });
+      });
+    });
+
+    /* random pick */
+    if(rollBtn){
+      rollBtn.addEventListener('click', function(){
+        var visible = Array.prototype.filter.call(cards, function(c){ return !c.classList.contains('hidden'); });
+        if(!visible.length) return;
+        var pick = visible[Math.floor(Math.random() * visible.length)];
+        var catVar = getComputedStyle(document.querySelector('#tab-books .block')).getPropertyValue('--' + pick.dataset.category);
+        pick.style.setProperty('--glow', catVar.trim());
+        pick.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        pick.classList.remove('pulse');
+        void pick.offsetWidth;
+        pick.classList.add('pulse');
+      });
+    }
+
+    /* cover loading — throttled to be gentle on slow connections */
+    var queue = Array.prototype.slice.call(cards);
+    var ACTIVE_LIMIT = 3;
+    var active = 0;
+
+    function next(){
+      if(!queue.length) return;
+      if(active >= ACTIVE_LIMIT) return;
+      var card = queue.shift();
+      active++;
+      loadCover(card).then(function(){
+        active--;
+        next();
+      });
+      next();
+    }
+
+    function loadCover(card){
+      var title = card.dataset.title;
+      var author = card.dataset.author;
+      var imgEl = card.querySelector('.cover-img');
+      if(!title || !imgEl) return Promise.resolve();
+      var controller = ('AbortController' in window) ? new AbortController() : null;
+      var timeoutId = controller ? setTimeout(function(){ controller.abort(); }, 6000) : null;
+      var url = 'https://openlibrary.org/search.json?title=' + encodeURIComponent(title) + '&author=' + encodeURIComponent(author || '') + '&limit=1&fields=cover_i';
+      return fetch(url, controller ? { signal: controller.signal } : {})
+        .then(function(res){ if(timeoutId) clearTimeout(timeoutId); return res.ok ? res.json() : null; })
+        .then(function(data){
+          if(!data || !data.docs || !data.docs.length) return;
+          var doc = data.docs[0];
+          if(doc && doc.cover_i){
+            var coverUrl = 'https://covers.openlibrary.org/b/id/' + doc.cover_i + '-M.jpg';
+            var test = new Image();
+            test.onload = function(){ imgEl.src = coverUrl; imgEl.classList.add('loaded'); };
+            test.src = coverUrl;
+          }
+        })
+        .catch(function(){ /* offline or slow — placeholder stays, no problem */ });
+    }
+
+    for(var i = 0; i < ACTIVE_LIMIT; i++){ next(); }
+  }
+})();
+</script>
+</body>
+</html>
